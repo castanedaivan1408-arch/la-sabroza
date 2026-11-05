@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" class="sin-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Definición del problema | La Sabroza · Investigación de marketing</title>
+  <meta name="description" content="Investigación de marketing de La Sabroza: entender al cliente antes de vender más.">
+  <link rel="icon" href="img/logo-la-sabroza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header class="barra-movil">
+    <a class="barra-movil__marca" href="index.html"><img src="img/logo-la-sabroza.png" alt="" width="40" height="40">La Sabroza</a>
+    <button class="barra-movil__boton" type="button" data-menu-abrir aria-controls="barra-lateral" aria-expanded="false">☰ Menú</button>
+  </header>
+  <div class="velo"></div>
+  <div class="progreso" aria-hidden="true"><span class="progreso__relleno"></span></div>
+
+  <div class="sitio">
+
+  <!-- ===== BARRA LATERAL ESTÁTICA (se repite igual en las 8 páginas; solo cambia cuál enlace está activo) ===== -->
+  <aside class="barra-lateral" id="barra-lateral" aria-label="Navegación principal">
+    <a class="barra-lateral__marca" href="index.html"><img class="barra-lateral__logo" src="img/logo-la-sabroza.png" alt="Logo de La Sabroza" width="132" height="132"><span class="barra-lateral__subtitulo">Investigación de marketing</span></a>
+    <nav aria-label="Fases del proyecto">
+      <details class="fase-nav" open><summary><span class="fase-nav__numero">01</span><span><strong>FASE 1 · ENTENDER</strong><small>Problema e investigación</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="index.html"><span class="barra-lateral__numero">★</span>Inicio</a></li><li><a class="barra-lateral__enlace barra-lateral__enlace--activo" href="problema.html" aria-current="page"><span class="barra-lateral__numero">01</span>Problema</a></li><li><a class="barra-lateral__enlace" href="contexto.html"><span class="barra-lateral__numero">02</span>Contexto</a></li><li><a class="barra-lateral__enlace" href="objetivo.html"><span class="barra-lateral__numero">03</span>Objetivos</a></li><li><a class="barra-lateral__enlace" href="segmentacion.html"><span class="barra-lateral__numero">04</span>Segmentación</a></li><li><a class="barra-lateral__enlace" href="personas.html"><span class="barra-lateral__numero">05</span>Buyer personas</a></li><li><a class="barra-lateral__enlace" href="empatia.html"><span class="barra-lateral__numero">06</span>Empatía</a></li><li><a class="barra-lateral__enlace" href="fuentes.html"><span class="barra-lateral__numero">07</span>Fuentes ENTENDER</a></li></ul></details>
+      <details class="fase-nav"><summary><span class="fase-nav__numero">02</span><span><strong>FASE 2 · DEFINIR</strong><small>Estrategia de marca</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="benchmarking.html"><span class="barra-lateral__numero">06</span>Benchmarking</a></li><li><a class="barra-lateral__enlace" href="propuesta-valor.html"><span class="barra-lateral__numero">07</span>Propuesta de valor</a></li><li><a class="barra-lateral__enlace" href="posicionamiento.html"><span class="barra-lateral__numero">08</span>Posicionamiento</a></li><li><a class="barra-lateral__enlace" href="identidad-marca.html"><span class="barra-lateral__numero">09</span>Identidad de marca</a></li><li><a class="barra-lateral__enlace" href="aplicaciones.html"><span class="barra-lateral__numero">10</span>Aplicaciones y fuentes</a></li></ul></details>
+    </nav>
+    <div class="barra-lateral__pie"><p>De la investigación a una estrategia de marca coherente.</p><a class="boton boton--fuego boton--chico" href="problema.html">Volver al problema →</a></div>
+  </aside>
+
+    <div class="contenido">
+      <main class="pagina" id="contenido-principal">
+
+        <!-- ===== ENCABEZADO DE LA PÁGINA ===== -->
+        <header class="revelar">
+          <p class="sobretitulo">01 · Definición del problema</p>
+          <h1>Una oferta que se vende en persona,<br><span class="destacado-dorado">pero no está formalmente presentada.</span></h1>
+        </header>
+        <p class="introduccion revelar">La entrevista con el responsable señala que La Sabroza no tiene un menú o catálogo establecido ni publicidad específica para presentar y difundir sus productos. La venta depende principalmente del puesto y del contacto directo con quienes pasan por el lugar.</p>
+
+        <!-- ===== FILTRO INTERACTIVO: separa hechos de hipótesis ===== -->
+        <div class="filtros" data-filtros="#hallazgos" role="group" aria-label="Filtrar hallazgos">
+          <button class="filtro filtro--activo" type="button" data-filtrar="todos" aria-pressed="true">Ver todo</button>
+          <button class="filtro" type="button" data-filtrar="hecho" aria-pressed="false">Solo hechos informados</button>
+          <button class="filtro" type="button" data-filtrar="verificar" aria-pressed="false">Solo lo por verificar</button>
+        </div>
+
+        <!-- ===== TARJETAS DE HALLAZGOS (data-categoria las conecta con el filtro) ===== -->
+        <section class="fila" id="hallazgos" aria-label="Hallazgos">
+          <article class="tarjeta columna-4 panel" data-categoria="hecho">
+            <span class="etiqueta etiqueta--dorada">Hecho informado</span>
+            <h3>Presentación limitada</h3>
+            <p>No existe un menú o catálogo establecido para mostrar los productos.</p>
+          </article>
+          <article class="tarjeta columna-4 panel" data-categoria="hecho">
+            <span class="etiqueta etiqueta--dorada">Hecho informado</span>
+            <h3>Difusión limitada</h3>
+            <p>El responsable indicó que no cuenta con publicidad ni acciones específicas para captar clientes.</p>
+          </article>
+          <article class="tarjeta tarjeta--fuego columna-4 panel" data-categoria="verificar">
+            <span class="etiqueta">Por verificar</span>
+            <h3>Impacto comercial</h3>
+            <p>El responsable cree que estas limitaciones y las opciones de pago disponibles podrían afectar ventas o clientes. No hay datos que midan ese efecto.</p>
+          </article>
+        </section>
+
+        <!-- ===== SÍNTOMA Y CAUSAS ===== -->
+        <section class="fila" aria-label="Síntoma y causas">
+          <article class="tarjeta columna-6 revelar">
+            <h3>Síntoma que se investigará</h3>
+            <p>Posible dificultad para que clientes potenciales conozcan la oferta y evalúen los productos antes de acercarse o comprar.</p>
+          </article>
+          <article class="tarjeta columna-6 revelar">
+            <h3>Posibles causas (hipótesis)</h3>
+            <ul>
+              <li>Ausencia de información organizada sobre productos y precios.</li>
+              <li>Poca difusión fuera del punto físico.</li>
+              <li>Limitaciones en los medios de pago aceptados.</li>
+              <li>Desconocimiento de cómo los consumidores encuentran y eligen el negocio.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== PREGUNTA PROBLEMA ===== -->
+        <article class="tarjeta tarjeta--dorada tarjeta--estatica revelar">
+          <h4>Pregunta problema</h4>
+          <p class="introduccion">¿Cómo se relaciona la ausencia de herramientas de presentación y difusión de la oferta comercial con la captación de clientes potenciales de La Sabroza?</p>
+          <span class="nota">La formulación no afirma causalidad; plantea una relación que debe investigarse.</span>
+          <div class="acciones"><a class="boton" href="contexto.html">Ver qué dicen los datos →</a></div>
+        </article>
+        <!-- ===== NAVEGACIÓN ENTRE PÁGINAS ===== -->
+        <nav class="pagina-nav" aria-label="Anterior y siguiente">
+          <a class="boton boton--secundario" href="index.html" rel="prev">← Inicio</a>
+          <a class="boton" href="contexto.html" rel="next">Contexto →</a>
+        </nav>
+      </main>
+      <footer class="pie-pagina">LA SABROZA · Fase Entender · Prototipo académico de investigación. No contiene propuestas de campaña ni afirma resultados comerciales no verificados.</footer>
+    </div>
+  </div>
+
+  <script src="js/interaccion.js" defer></script>
+</body>
+</html>

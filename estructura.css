@@ -1,0 +1,273 @@
+/* =====================================================================
+   ESTRUCTURA.CSS · Esqueleto del sitio: barra lateral + contenido
+   Todo el maquetado usa FLEXBOX (display:flex). No se usa grid.
+   ===================================================================== */
+
+/* .sitio envuelve TODO: barra lateral a la izquierda y contenido a la derecha. */
+.sitio {
+  display: flex;                     /* Activa flexbox: los hijos quedan uno al lado del otro (fila). */
+  min-height: 100vh;                 /* Como mínimo ocupa toda la altura de la pantalla. */
+}
+
+/* ---------- BARRA LATERAL (sidebar estático) ---------- */
+.barra-lateral {
+  flex: 0 0 var(--ancho-barra);      /* flex: no crece (0), no se encoge (0), ancho base fijo. */
+  position: sticky;                  /* "Pegajosa": se queda fija mientras la página se desplaza. */
+  top: 0;                            /* Se pega al borde superior de la ventana. */
+  align-self: flex-start;            /* Evita que flexbox la estire más alto que la pantalla. */
+  height: 100vh;                     /* Exactamente la altura de la ventana. */
+  display: flex;                     /* También es contenedor flex... */
+  flex-direction: column;            /* ...pero en columna: sus hijos se apilan de arriba hacia abajo. */
+  gap: 16px;                         /* Separación entre marca, menú y llamado a la acción. */
+  padding: 26px 18px;                /* Espacio interno: 26px arriba/abajo, 18px a los lados. */
+  background: linear-gradient(180deg, #17110d, var(--color-panel)); /* Degradado sutil vertical. */
+  border-right: 1px solid var(--color-borde); /* Línea fina que separa sidebar y contenido. */
+  overflow-y: auto;                  /* Si la pantalla es baja, el menú tiene su propio scroll. */
+  z-index: 40;                       /* Capa por encima del contenido. */
+}
+
+.barra-lateral__marca {
+  display: flex;                     /* Contenedor flex del logo y el nombre. */
+  flex-direction: column;            /* Logo arriba, texto abajo. */
+  align-items: center;               /* Centra horizontalmente. */
+  gap: 8px;                          /* Espacio entre logo y texto. */
+  text-align: center;                /* Texto centrado. */
+  text-decoration: none;             /* Sin subrayado (es un enlace al inicio). */
+}
+
+.barra-lateral__logo {
+  width: 110px;                      /* Tamaño del logo. */
+  height: 110px;                     /* Cuadrado, igual que la imagen original. */
+  object-fit: contain;               /* La imagen se ajusta sin deformarse. */
+  border-radius: 24px;               /* Esquinas suaves. */
+  filter: drop-shadow(0 8px 20px rgba(229, 9, 20, .35)); /* Resplandor rojo bajo el logo. */
+}
+
+.barra-lateral__subtitulo {
+  font-size: .68rem;                 /* Texto muy pequeño. */
+  letter-spacing: .22em;             /* Muy espaciado. */
+  text-transform: uppercase;         /* Mayúsculas. */
+  color: var(--color-dorado);        /* Dorado. */
+  font-weight: 700;                  /* Negrita. */
+}
+
+.barra-lateral__menu {
+  display: flex;                     /* Lista de enlaces como flex... */
+  flex-direction: column;            /* ...apilados verticalmente. */
+  gap: 4px;                          /* Pequeña separación entre enlaces. */
+  list-style: none;                  /* Quita las viñetas. */
+  padding: 0;                        /* Quita la sangría de la lista. */
+}
+
+.barra-lateral__enlace {
+  display: flex;                     /* Número + texto en la misma línea. */
+  align-items: center;               /* Centra verticalmente número y texto. */
+  gap: 12px;                         /* Espacio entre número y texto. */
+  padding: 8px 12px;                 /* Área clicable cómoda pero compacta. */
+  border-radius: 14px;               /* Esquinas redondeadas. */
+  border: 1px solid transparent;     /* Borde invisible para que no "salte" al activarse. */
+  color: #e8dcc6;                    /* Crema apagado. */
+  text-decoration: none;             /* Sin subrayado. */
+  font-weight: 500;                  /* Peso medio. */
+  transition: background .2s, border-color .2s, transform .2s; /* Cambios suaves al pasar el mouse. */
+}
+
+.barra-lateral__enlace:hover {
+  background: #21180b;               /* Fondo marrón al pasar el mouse. */
+  border-color: #5b3c14;             /* Borde dorado oscuro. */
+  transform: translateX(4px);        /* Se desplaza 4px a la derecha: sensación de movimiento. */
+}
+
+.barra-lateral__numero {
+  flex: 0 0 30px;                    /* Ancho fijo de 30px para todos los números. */
+  height: 30px;                      /* Alto igual al ancho: círculo. */
+  display: flex;                     /* Flex para centrar el número dentro. */
+  align-items: center;               /* Centrado vertical. */
+  justify-content: center;           /* Centrado horizontal. */
+  border-radius: 50%;                /* Círculo perfecto. */
+  background: #2a1d0e;               /* Fondo marrón. */
+  color: var(--color-dorado-claro);  /* Número dorado claro. */
+  font-size: .75rem;                 /* Pequeño. */
+  font-weight: 700;                  /* Negrita. */
+}
+
+/* Estado ACTIVO: la página en la que estás. */
+.barra-lateral__enlace--activo {
+  background: linear-gradient(90deg, rgba(229, 9, 20, .22), rgba(245, 184, 61, .10)); /* Degradado rojo→dorado. */
+  border-color: var(--color-dorado); /* Borde dorado brillante. */
+  color: var(--color-dorado-claro);  /* Texto dorado claro. */
+}
+
+.barra-lateral__enlace--activo .barra-lateral__numero {
+  background: var(--color-rojo);     /* El círculo se vuelve rojo. */
+  color: #fff;                       /* Número blanco. */
+}
+
+.barra-lateral__pie {
+  margin-top: auto;                  /* Truco flex: empuja este bloque al fondo de la barra. */
+  display: flex;                     /* Contenedor flex. */
+  flex-direction: column;            /* Apila texto y botón. */
+  gap: 10px;                         /* Separación. */
+  padding: 16px;                     /* Relleno interno. */
+  border: 1px dashed #8a6428;        /* Borde punteado dorado: llama la atención. */
+  border-radius: 16px;               /* Esquinas redondeadas. */
+  background: rgba(245, 184, 61, .06); /* Fondo dorado muy tenue. */
+}
+
+.barra-lateral__pie p {
+  font-size: .82rem;                 /* Texto pequeño. */
+  line-height: 1.45;                 /* Interlineado compacto. */
+}
+
+/* ---------- ZONA DE CONTENIDO ---------- */
+.contenido {
+  flex: 1 1 0;                       /* Ocupa todo el ancho restante a la derecha de la barra. */
+  min-width: 0;                      /* Permite que el contenido se encoja (evita desbordes en flex). */
+  display: flex;                     /* Contenedor flex. */
+  flex-direction: column;            /* Apila: página + pie de página. */
+}
+
+/* Barra de progreso de lectura (línea fina arriba). */
+.progreso {
+  position: fixed;                   /* Fija en pantalla. */
+  top: 0;                            /* Arriba del todo. */
+  left: var(--ancho-barra);          /* Empieza donde termina la barra lateral. */
+  right: 0;                          /* Hasta el borde derecho. */
+  height: 4px;                       /* Delgada. */
+  background: rgba(255, 255, 255, .06); /* Carril casi invisible. */
+  z-index: 50;                       /* Por encima de todo. */
+}
+
+.progreso__relleno {
+  display: block;                    /* Para poder darle alto y ancho. */
+  height: 100%;                      /* Llena el alto del carril. */
+  width: 100%;                       /* Ancho completo, pero lo recortamos con scaleX. */
+  background: linear-gradient(90deg, var(--color-rojo), var(--color-dorado)); /* Degradado marca. */
+  transform-origin: left center;     /* La escala crece desde la izquierda. */
+  transform: scaleX(var(--avance, 0)); /* --avance (0 a 1) lo actualiza JavaScript al hacer scroll. */
+}
+
+/* Cada sección es UNA PÁGINA: ocupa al menos toda la pantalla. */
+.pagina {
+  flex: 1 0 auto;                    /* Crece para llenar la altura y nunca se aplasta. */
+  min-height: 100vh;                 /* Mínimo: una pantalla completa. */
+  width: 100%;                       /* Ancho completo del área de contenido. */
+  max-width: 1180px;                 /* Límite de lectura cómoda. */
+  margin: 0 auto;                    /* Centrada horizontalmente. */
+  padding: 64px 56px 40px;           /* Aire arriba, a los lados y abajo. */
+  display: flex;                     /* Contenedor flex. */
+  flex-direction: column;            /* Elementos apilados. */
+  justify-content: center;           /* Centra el bloque verticalmente en la pantalla. */
+  gap: 28px;                         /* Separación entre bloques de la página. */
+}
+
+/* Navegación anterior / siguiente al final de cada página. */
+.pagina-nav {
+  display: flex;                     /* Botones en fila. */
+  justify-content: space-between;    /* Uno a cada extremo. */
+  align-items: center;               /* Alineados verticalmente. */
+  flex-wrap: wrap;                   /* Si no caben, bajan de línea. */
+  gap: 12px;                         /* Separación si bajan. */
+  padding-top: 24px;                 /* Aire sobre la línea. */
+  border-top: 1px solid var(--color-borde); /* Línea divisoria. */
+}
+
+.pie-pagina {
+  padding: 24px 56px 32px;           /* Espacio interno. */
+  font-size: .78rem;                 /* Texto pequeño. */
+  color: var(--color-tenue);         /* Gris apagado. */
+  max-width: 1180px;                 /* Mismo ancho que la página. */
+  margin: 0 auto;                    /* Centrado. */
+  width: 100%;                       /* Ancho completo hasta el máximo. */
+}
+
+/* ---------- BARRA MÓVIL (solo aparece en pantallas pequeñas) ---------- */
+.barra-movil {
+  display: none;                     /* Oculta en escritorio. */
+}
+
+.velo {
+  display: none;                     /* Capa oscura detrás del menú móvil: oculta por defecto. */
+}
+
+/* ---------- SISTEMA DE FILAS Y COLUMNAS CON FLEXBOX ---------- */
+.fila {
+  display: flex;                     /* Las columnas se ponen una al lado de otra. */
+  flex-wrap: wrap;                   /* Si no caben, bajan a la siguiente línea. */
+  gap: var(--espacio);               /* Separación uniforme entre columnas. */
+}
+
+.columna-4 { flex: 1 1 250px; }      /* Crece, se encoge, base 250px: caben ~3 por fila. */
+.columna-6 { flex: 1 1 380px; }      /* Base 380px: caben 2 por fila. */
+.columna-12 { flex: 1 1 100%; }      /* Base 100%: ocupa una fila entera. */
+
+/* ---------- ADAPTACIÓN A TABLET Y MÓVIL ---------- */
+@media (max-width: 900px) {
+  .sitio { flex-direction: column; } /* En móvil: barra superior arriba, contenido debajo. */
+
+  .barra-movil {
+    display: flex;                   /* Se muestra la barra superior. */
+    align-items: center;             /* Centrada verticalmente. */
+    justify-content: space-between;  /* Logo a la izquierda, botón a la derecha. */
+    position: sticky;                /* Se queda pegada arriba al desplazar. */
+    top: 0;                          /* Borde superior. */
+    z-index: 35;                     /* Por encima del contenido. */
+    padding: 10px 16px;              /* Relleno. */
+    background: rgba(10, 8, 7, .94); /* Fondo casi opaco. */
+    backdrop-filter: blur(10px);     /* Desenfoca lo que pasa por detrás. */
+    border-bottom: 1px solid var(--color-borde); /* Línea inferior. */
+  }
+
+  .barra-movil__marca {
+    display: flex;                   /* Logo y nombre en fila. */
+    align-items: center;             /* Centrados. */
+    gap: 10px;                       /* Separación. */
+    font-family: var(--fuente-titulo); /* Fuente de títulos. */
+    letter-spacing: .1em;            /* Aire entre letras. */
+    color: var(--color-crema);       /* Crema. */
+    text-transform: uppercase;       /* Mayúsculas. */
+  }
+
+  .barra-movil__marca img {
+    width: 40px;                     /* Logo pequeño. */
+    height: 40px;                    /* Cuadrado. */
+  }
+
+  .barra-movil__boton {
+    padding: 10px 16px;              /* Área clicable. */
+    border: 1px solid var(--color-dorado); /* Borde dorado. */
+    border-radius: var(--radio-boton); /* Píldora. */
+    color: var(--color-dorado-claro); /* Texto dorado. */
+    font-weight: 700;                /* Negrita. */
+  }
+
+  .barra-lateral {
+    position: fixed;                 /* En móvil se vuelve un panel deslizable. */
+    left: 0;                         /* Pegado a la izquierda. */
+    top: 0;                          /* Desde arriba. */
+    bottom: 0;                       /* Hasta abajo. */
+    width: min(88vw, 320px);         /* Ancho: 88% de la pantalla, máximo 320px. */
+    flex: none;                      /* Anula el flex-basis del escritorio. */
+    transform: translateX(-105%);    /* Escondido fuera de pantalla a la izquierda. */
+    transition: transform .3s ease;  /* Se desliza al abrir. */
+  }
+
+  .barra-lateral--abierta { transform: translateX(0); } /* Clase que pone JS: el panel entra a la vista. */
+
+  .velo--visible {
+    display: block;                  /* Se muestra la capa oscura... */
+    position: fixed;                 /* ...cubriendo toda la pantalla... */
+    inset: 0;                        /* ...de borde a borde. */
+    background: rgba(0, 0, 0, .6);   /* Negro semitransparente. */
+    z-index: 38;                     /* Debajo del panel (40) y sobre el contenido. */
+  }
+
+  .progreso { left: 0; }             /* La barra de progreso ocupa todo el ancho en móvil. */
+
+  .pagina {
+    padding: 36px 20px 28px;         /* Menos relleno en pantallas pequeñas. */
+    min-height: calc(100vh - 62px);  /* Descuenta la barra móvil. */
+  }
+
+  .pie-pagina { padding: 20px; }     /* Pie con menos relleno. */
+}

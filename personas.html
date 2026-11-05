@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" class="sin-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuatro buyer personas | La Sabroza · Investigación de marketing</title>
+  <meta name="description" content="Investigación de marketing de La Sabroza: entender al cliente antes de vender más.">
+  <link rel="icon" href="img/logo-la-sabroza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header class="barra-movil">
+    <a class="barra-movil__marca" href="index.html"><img src="img/logo-la-sabroza.png" alt="" width="40" height="40">La Sabroza</a>
+    <button class="barra-movil__boton" type="button" data-menu-abrir aria-controls="barra-lateral" aria-expanded="false">☰ Menú</button>
+  </header>
+  <div class="velo"></div>
+  <div class="progreso" aria-hidden="true"><span class="progreso__relleno"></span></div>
+
+  <div class="sitio">
+
+  <!-- ===== BARRA LATERAL ESTÁTICA (se repite igual en las 8 páginas; solo cambia cuál enlace está activo) ===== -->
+  <aside class="barra-lateral" id="barra-lateral" aria-label="Navegación principal">
+    <a class="barra-lateral__marca" href="index.html"><img class="barra-lateral__logo" src="img/logo-la-sabroza.png" alt="Logo de La Sabroza" width="132" height="132"><span class="barra-lateral__subtitulo">Investigación de marketing</span></a>
+    <nav aria-label="Fases del proyecto">
+      <details class="fase-nav" open><summary><span class="fase-nav__numero">01</span><span><strong>FASE 1 · ENTENDER</strong><small>Problema e investigación</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="index.html"><span class="barra-lateral__numero">★</span>Inicio</a></li><li><a class="barra-lateral__enlace" href="problema.html"><span class="barra-lateral__numero">01</span>Problema</a></li><li><a class="barra-lateral__enlace" href="contexto.html"><span class="barra-lateral__numero">02</span>Contexto</a></li><li><a class="barra-lateral__enlace" href="objetivo.html"><span class="barra-lateral__numero">03</span>Objetivos</a></li><li><a class="barra-lateral__enlace" href="segmentacion.html"><span class="barra-lateral__numero">04</span>Segmentación</a></li><li><a class="barra-lateral__enlace barra-lateral__enlace--activo" href="personas.html" aria-current="page"><span class="barra-lateral__numero">05</span>Buyer personas</a></li><li><a class="barra-lateral__enlace" href="empatia.html"><span class="barra-lateral__numero">06</span>Empatía</a></li><li><a class="barra-lateral__enlace" href="fuentes.html"><span class="barra-lateral__numero">07</span>Fuentes ENTENDER</a></li></ul></details>
+      <details class="fase-nav"><summary><span class="fase-nav__numero">02</span><span><strong>FASE 2 · DEFINIR</strong><small>Estrategia de marca</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="benchmarking.html"><span class="barra-lateral__numero">06</span>Benchmarking</a></li><li><a class="barra-lateral__enlace" href="propuesta-valor.html"><span class="barra-lateral__numero">07</span>Propuesta de valor</a></li><li><a class="barra-lateral__enlace" href="posicionamiento.html"><span class="barra-lateral__numero">08</span>Posicionamiento</a></li><li><a class="barra-lateral__enlace" href="identidad-marca.html"><span class="barra-lateral__numero">09</span>Identidad de marca</a></li><li><a class="barra-lateral__enlace" href="aplicaciones.html"><span class="barra-lateral__numero">10</span>Aplicaciones y fuentes</a></li></ul></details>
+    </nav>
+    <div class="barra-lateral__pie"><p>De la investigación a una estrategia de marca coherente.</p><a class="boton boton--fuego boton--chico" href="problema.html">Volver al problema →</a></div>
+  </aside>
+
+    <div class="contenido">
+      <main class="pagina" id="contenido-principal">
+
+        <header class="revelar">
+          <p class="sobretitulo">05 · Cuatro buyer personas</p>
+          <h1>Perfiles hipotéticos <span class="destacado-dorado">para orientar la investigación.</span></h1>
+        </header>
+        <p class="introduccion revelar">Estos arquetipos son hipótesis iniciales construidas a partir del contexto del negocio y de patrones generales de consumo. No representan clientes entrevistados ni datos demográficos comprobados de La Sabroza.</p>
+
+        <!-- ===== SELECTOR INTERACTIVO DE PERSONA ===== -->
+        <div class="filtros" data-filtros="#lista-personas" role="group" aria-label="Elegir buyer persona">
+          <button class="filtro filtro--activo" type="button" data-filtrar="todos" aria-pressed="true">Ver las 4</button>
+          <button class="filtro" type="button" data-filtrar="camila" aria-pressed="false">1 · Camila</button>
+          <button class="filtro" type="button" data-filtrar="andres" aria-pressed="false">2 · Andrés</button>
+          <button class="filtro" type="button" data-filtrar="valentina" aria-pressed="false">3 · Valentina</button>
+          <button class="filtro" type="button" data-filtrar="jorge" aria-pressed="false">4 · Jorge</button>
+        </div>
+
+        <section class="fila" id="lista-personas" aria-label="Buyer personas">
+          <article class="tarjeta columna-6 panel" data-categoria="camila">
+            <div class="persona__cabecera">
+              <div class="persona__avatar" aria-hidden="true">1</div>
+              <div><h3>Camila, la estudiante práctica</h3><div class="persona__meta">22 años · Estudiante · Ubicación por confirmar</div></div>
+            </div>
+            <span class="etiqueta etiqueta--dorada">Hipótesis de perfil</span>
+            <p class="persona__dato"><strong>Perfil general:</strong> busca resolver una comida entre clases o actividades.</p>
+            <p class="persona__dato"><strong>Necesidades y motivaciones:</strong> precio comprensible, rapidez, porción satisfactoria y opciones fáciles de comparar.</p>
+            <p class="persona__dato"><strong>Hábitos:</strong> compra cerca de sus recorridos; puede decidir según tiempo y presupuesto.</p>
+            <p class="persona__dato"><strong>Canales de información:</strong> observación del puesto, recomendaciones de compañeros y, si existen, perfiles sociales.</p>
+            <p class="persona__dato"><strong>Frustraciones:</strong> no identificar rápidamente productos, precios o qué incluye cada opción.</p>
+            <p class="persona__dato"><strong>Relación con el problema:</strong> podría pasar de largo si no entiende la oferta a primera vista; debe validarse.</p>
+            <details class="desplegable">
+              <summary class="desplegable__titulo">¿Qué falta validar de Camila?</summary>
+              <p class="desplegable__contenido">Validar: presupuesto habitual, frecuencia de compra y qué información busca antes de pedir.</p>
+            </details>
+          </article>
+          <article class="tarjeta columna-6 panel" data-categoria="andres">
+            <div class="persona__cabecera">
+              <div class="persona__avatar" aria-hidden="true">2</div>
+              <div><h3>Andrés, el trabajador con poco tiempo</h3><div class="persona__meta">34 años · Trabajador · Zona por confirmar</div></div>
+            </div>
+            <span class="etiqueta etiqueta--dorada">Hipótesis de perfil</span>
+            <p class="persona__dato"><strong>Perfil general:</strong> necesita comprar algo práctico durante una pausa laboral o al salir del trabajo.</p>
+            <p class="persona__dato"><strong>Necesidades y motivaciones:</strong> rapidez, disponibilidad clara, precio conocido y facilidad de pago.</p>
+            <p class="persona__dato"><strong>Hábitos:</strong> podría priorizar puestos en su ruta y decidir con poco tiempo.</p>
+            <p class="persona__dato"><strong>Canales de información:</strong> señalización del puesto, colegas y experiencia previa.</p>
+            <p class="persona__dato"><strong>Frustraciones:</strong> tener que preguntar por cada precio o no contar con el medio de pago que prefiere.</p>
+            <p class="persona__dato"><strong>Relación con el problema:</strong> la incertidumbre podría ser una barrera si necesita una decisión rápida.</p>
+            <details class="desplegable">
+              <summary class="desplegable__titulo">¿Qué falta validar de Andrés?</summary>
+              <p class="desplegable__contenido">Validar: cuánto tiempo dedica a comprar y qué medios de pago utiliza realmente.</p>
+            </details>
+          </article>
+          <article class="tarjeta columna-6 panel" data-categoria="valentina">
+            <div class="persona__cabecera">
+              <div class="persona__avatar" aria-hidden="true">3</div>
+              <div><h3>Valentina, la exploradora de sabores</h3><div class="persona__meta">27 años · Profesional joven · Zona por confirmar</div></div>
+            </div>
+            <span class="etiqueta etiqueta--dorada">Hipótesis de perfil</span>
+            <p class="persona__dato"><strong>Perfil general:</strong> prueba puestos de comida cuando le llaman la atención el producto o la recomendación.</p>
+            <p class="persona__dato"><strong>Necesidades y motivaciones:</strong> conocer ingredientes, presentación, variedad y relación calidad-precio.</p>
+            <p class="persona__dato"><strong>Hábitos:</strong> puede descubrir negocios por recomendaciones o por lo que ve al caminar.</p>
+            <p class="persona__dato"><strong>Canales de información:</strong> recomendación interpersonal y contenidos digitales disponibles.</p>
+            <p class="persona__dato"><strong>Frustraciones:</strong> poca información para comparar o saber qué productos ofrece el puesto.</p>
+            <p class="persona__dato"><strong>Relación con el problema:</strong> la falta de información previa podría limitar el descubrimiento; no está comprobado.</p>
+            <details class="desplegable">
+              <summary class="desplegable__titulo">¿Qué falta validar de Valentina?</summary>
+              <p class="desplegable__contenido">Validar: qué señales le generan confianza y qué información necesita para probar un lugar nuevo.</p>
+            </details>
+          </article>
+          <article class="tarjeta columna-6 panel" data-categoria="jorge">
+            <div class="persona__cabecera">
+              <div class="persona__avatar" aria-hidden="true">4</div>
+              <div><h3>Jorge, el comprador habitual del sector</h3><div class="persona__meta">45 años · Residente o trabajador local · Zona por confirmar</div></div>
+            </div>
+            <span class="etiqueta etiqueta--dorada">Hipótesis de perfil</span>
+            <p class="persona__dato"><strong>Perfil general:</strong> conoce los negocios de su entorno y podría repetir compras cuando una experiencia le resulta satisfactoria.</p>
+            <p class="persona__dato"><strong>Necesidades y motivaciones:</strong> consistencia del producto, trato cordial, precio razonable y disponibilidad.</p>
+            <p class="persona__dato"><strong>Hábitos:</strong> podría comprar por rutina o recomendación; frecuencia pendiente de investigar.</p>
+            <p class="persona__dato"><strong>Canales de información:</strong> contacto directo, vecinos y conocidos.</p>
+            <p class="persona__dato"><strong>Frustraciones:</strong> no saber si hay cambios en la oferta, precios o disponibilidad.</p>
+            <p class="persona__dato"><strong>Relación con el problema:</strong> la presentación de la oferta podría influir en la claridad de la compra y la recomendación.</p>
+            <details class="desplegable">
+              <summary class="desplegable__titulo">¿Qué falta validar de Jorge?</summary>
+              <p class="desplegable__contenido">Validar: frecuencia real, motivos de recompra y si recomendaría el negocio a otras personas.</p>
+            </details>
+          </article>
+        </section>
+        <div class="acciones"><a class="boton" href="empatia.html">Ponernos en sus zapatos →</a></div>
+        <!-- ===== NAVEGACIÓN ENTRE PÁGINAS ===== -->
+        <nav class="pagina-nav" aria-label="Anterior y siguiente">
+          <a class="boton boton--secundario" href="segmentacion.html" rel="prev">← Segmentación</a>
+          <a class="boton" href="empatia.html" rel="next">Empatía →</a>
+        </nav>
+      </main>
+      <footer class="pie-pagina">LA SABROZA · Fase Entender · Prototipo académico de investigación. No contiene propuestas de campaña ni afirma resultados comerciales no verificados.</footer>
+    </div>
+  </div>
+
+  <script src="js/interaccion.js" defer></script>
+</body>
+</html>

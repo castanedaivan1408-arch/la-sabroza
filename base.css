@@ -1,0 +1,131 @@
+/* =====================================================================
+   BASE.CSS · Variables, reinicio y tipografía
+   Aquí viven los "ingredientes" del diseño: colores, fuentes y espacios.
+   Si quieres cambiar la identidad visual, casi todo se cambia SOLO aquí.
+   ===================================================================== */
+
+/* :root = la etiqueta <html>. Las variables definidas aquí se leen en todo el sitio con var(--nombre). */
+:root {
+  --color-fondo: #0a0807;            /* Negro cálido: fondo general de todas las páginas. */
+  --color-panel: #14100d;            /* Marrón casi negro: fondo de la barra lateral y paneles. */
+  --color-panel-2: #1d1712;          /* Un tono más claro para tarjetas y fichas. */
+  --color-dorado: #f5b83d;           /* Dorado del logo: acentos, números y botones principales. */
+  --color-dorado-claro: #ffe19a;     /* Dorado suave: títulos pequeños y textos destacados. */
+  --color-rojo: #e50914;             /* Rojo fuego del logo: llamadas de atención. */
+  --color-rojo-oscuro: #a80008;      /* Rojo profundo: degradados y sombras. */
+  --color-crema: #fff3d5;            /* Crema: texto principal y títulos grandes. */
+  --color-texto: #d4c8b7;            /* Gris cálido: párrafos, cómodo de leer sobre fondo oscuro. */
+  --color-tenue: #a99b88;            /* Gris más apagado: notas pequeñas y fuentes. */
+  --color-borde: #3b2c19;            /* Marrón para bordes finos de tarjetas. */
+  --color-verde: #b9d9b0;            /* Verde suave: confirmaciones (lista de verificación). */
+
+  --radio-tarjeta: 20px;             /* Curvatura de las esquinas de las tarjetas. */
+  --radio-boton: 999px;              /* Un radio enorme = botón con forma de píldora. */
+  --espacio: 18px;                   /* Separación estándar entre elementos hermanos. */
+  --ancho-barra: 300px;              /* Ancho fijo de la barra lateral en escritorio. */
+  --sombra-suave: 0 18px 40px rgba(0, 0, 0, .45); /* Sombra para dar profundidad. */
+
+  --fuente-titulo: "Oswald", "Arial Narrow", Impact, sans-serif;  /* Fuente condensada y potente para títulos. */
+  --fuente-texto: "DM Sans", Arial, Helvetica, sans-serif;        /* Fuente limpia para párrafos. */
+}
+
+/* Reinicio: el asterisco selecciona TODOS los elementos. */
+* {
+  box-sizing: border-box;            /* El ancho incluye relleno y borde: evita desbordes sorpresa. */
+  margin: 0;                         /* Quita los márgenes por defecto del navegador. */
+  padding: 0;                        /* Quita los rellenos por defecto del navegador. */
+}
+
+html {
+  scroll-behavior: smooth;           /* Los saltos de ancla (#algo) se deslizan suavemente. */
+  -webkit-text-size-adjust: 100%;    /* Evita que el móvil agrande el texto por su cuenta. */
+}
+
+body {
+  background-color: var(--color-fondo);                    /* Fondo negro cálido. */
+  background-image:                                        /* Dos resplandores decorativos tipo "brasa": */
+    radial-gradient(900px 500px at 85% -10%, rgba(229, 9, 20, .18), transparent 60%),   /* rojo arriba a la derecha */
+    radial-gradient(700px 500px at 10% 110%, rgba(245, 184, 61, .10), transparent 60%); /* dorado abajo a la izquierda */
+  background-attachment: fixed;      /* El resplandor queda quieto mientras se hace scroll. */
+  color: var(--color-texto);         /* Color de texto por defecto. */
+  font-family: var(--fuente-texto);  /* Fuente de párrafos. */
+  font-size: 16px;                   /* Tamaño base: 1rem = 16px. */
+  line-height: 1.65;                 /* Interlineado cómodo para lectura larga. */
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulo); /* Todos los títulos usan la fuente condensada. */
+  color: var(--color-crema);         /* Títulos en crema para máximo contraste. */
+  font-weight: 600;                  /* Peso semi-negrita. */
+  line-height: 1.08;                 /* Interlineado apretado: los títulos se ven compactos. */
+  letter-spacing: .01em;             /* Un poquito de aire entre letras. */
+}
+
+h1 {
+  font-size: clamp(2.3rem, 4.4vw, 3.9rem);  /* clamp(mín, ideal, máx): crece con la pantalla sin pasarse. */
+  text-transform: uppercase;         /* Mayúsculas: estilo cartel de parrilla. */
+}
+
+h2 {
+  font-size: clamp(2rem, 3.6vw, 3.2rem);    /* Títulos de sección, un escalón menor que h1. */
+  text-transform: uppercase;         /* Mantiene el estilo cartel. */
+}
+
+h3 {
+  font-size: 1.35rem;                /* Títulos de tarjeta. */
+  color: var(--color-dorado-claro);  /* Dorado suave para distinguirlos del h1/h2. */
+}
+
+h4 {
+  font-size: .8rem;                  /* Rótulo pequeño. */
+  color: var(--color-dorado);        /* Dorado intenso. */
+  text-transform: uppercase;         /* Mayúsculas. */
+  letter-spacing: .14em;             /* Mucho aire entre letras: aspecto de etiqueta. */
+  font-family: var(--fuente-texto);  /* Aquí sí usamos la fuente de texto para que se lea nítido. */
+  font-weight: 700;                  /* Negrita. */
+}
+
+p { color: var(--color-texto); }     /* Los párrafos usan el gris cálido. */
+
+ul, ol { padding-left: 1.2rem; }     /* Sangría para que las viñetas no se salgan de la tarjeta. */
+
+li { margin: .4rem 0; }              /* Pequeña separación vertical entre elementos de lista. */
+
+a {
+  color: var(--color-dorado-claro);  /* Enlaces dorados. */
+  text-underline-offset: 3px;        /* Separa el subrayado del texto para que respire. */
+}
+
+img {
+  max-width: 100%;                   /* Ninguna imagen se sale de su contenedor. */
+  display: block;                    /* Quita el hueco que deja una imagen "en línea". */
+}
+
+button {
+  font: inherit;                     /* Los botones heredan la fuente del sitio (por defecto usan otra). */
+  cursor: pointer;                   /* Manita al pasar el mouse. */
+  border: 0;                         /* Sin borde nativo. */
+  background: none;                  /* Sin fondo nativo. */
+  color: inherit;                    /* Hereda el color del texto. */
+}
+
+[hidden] { display: none !important; } /* Garantiza que el atributo hidden SIEMPRE oculte, aunque otra regla use display:flex. */
+
+:focus-visible {
+  outline: 3px solid var(--color-dorado); /* Aro dorado visible al navegar con teclado (accesibilidad). */
+  outline-offset: 3px;               /* Separa el aro del elemento. */
+}
+
+::selection {
+  background: var(--color-rojo);     /* Al seleccionar texto el fondo es rojo marca. */
+  color: #fff;                       /* Y el texto, blanco. */
+}
+
+/* Respeto a usuarios que pidieron menos movimiento en su sistema. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;      /* Apaga animaciones. */
+    transition: none !important;     /* Apaga transiciones. */
+  }
+  html { scroll-behavior: auto; }    /* Apaga el desplazamiento suave. */
+}

@@ -1,0 +1,564 @@
+/* =====================================================================
+   COMPONENTES.CSS · Piezas reutilizables: botones, tarjetas, tablas...
+   Convención de nombres (BEM en español):
+     .bloque            → el componente        (.tarjeta)
+     .bloque__elemento  → una parte interna    (.persona__cabecera)
+     .bloque--variante  → una versión distinta (.tarjeta--dorada)
+   ===================================================================== */
+
+/* ---------- TEXTOS DE APOYO ---------- */
+.sobretitulo {
+  color: var(--color-dorado);        /* Dorado. */
+  text-transform: uppercase;         /* Mayúsculas. */
+  letter-spacing: .2em;              /* Muy espaciado. */
+  font-size: .75rem;                 /* Pequeño. */
+  font-weight: 700;                  /* Negrita. */
+  display: flex;                     /* Flex para alinear la rayita decorativa con el texto. */
+  align-items: center;               /* Centrado vertical. */
+  gap: 12px;                         /* Separación entre rayita y texto. */
+}
+
+.sobretitulo::before {
+  content: "";                       /* Pseudo-elemento vacío: solo dibuja la rayita. */
+  width: 36px;                       /* Largo de la rayita. */
+  height: 2px;                       /* Grosor. */
+  background: linear-gradient(90deg, var(--color-rojo), var(--color-dorado)); /* Degradado marca. */
+}
+
+.destacado-dorado { color: var(--color-dorado); }  /* Palabra resaltada dentro de un título. */
+
+.introduccion {
+  font-size: 1.14rem;                /* Párrafo de entrada, algo más grande. */
+  max-width: 860px;                  /* Línea corta = lectura cómoda. */
+}
+
+.nota {
+  font-size: .78rem;                 /* Letra pequeña. */
+  color: var(--color-tenue);         /* Gris apagado. */
+}
+
+.estadistica {
+  font-family: var(--fuente-titulo); /* Números con fuente de títulos. */
+  font-size: 3.2rem;                 /* Muy grande. */
+  font-weight: 700;                  /* Negrita. */
+  color: var(--color-dorado);        /* Dorado. */
+  line-height: 1;                    /* Sin interlineado extra. */
+}
+
+/* ---------- BOTONES Y LLAMADOS A LA ACCIÓN (CTA) ---------- */
+.acciones {
+  display: flex;                     /* Botones en fila. */
+  flex-wrap: wrap;                   /* Bajan si no caben. */
+  gap: 12px;                         /* Separación. */
+}
+
+.boton {
+  display: inline-flex;              /* Flex en línea: texto + flecha alineados. */
+  align-items: center;               /* Centrado vertical. */
+  justify-content: center;           /* Centrado horizontal. */
+  gap: 10px;                         /* Separación texto/flecha. */
+  padding: 14px 24px;                /* Tamaño cómodo para tocar. */
+  border-radius: var(--radio-boton); /* Forma de píldora. */
+  background: linear-gradient(135deg, var(--color-dorado), #e99a12); /* Dorado degradado. */
+  color: #1b1004;                    /* Texto oscuro sobre dorado: contraste alto. */
+  font-weight: 800;                  /* Extra negrita. */
+  text-decoration: none;             /* Los botones <a> sin subrayado. */
+  box-shadow: 0 10px 26px rgba(245, 184, 61, .25); /* Resplandor dorado. */
+  transition: transform .2s, box-shadow .2s, filter .2s; /* Animación suave. */
+}
+
+.boton:hover {
+  transform: translateY(-3px);       /* Se levanta 3px. */
+  box-shadow: 0 16px 34px rgba(245, 184, 61, .4); /* El resplandor crece. */
+  filter: brightness(1.06);          /* Un poco más brillante. */
+}
+
+.boton:active { transform: translateY(0); }  /* Al hacer clic vuelve a su sitio: efecto "presionado". */
+
+.boton--secundario {
+  background: transparent;           /* Sin relleno. */
+  border: 1px solid #73501c;         /* Solo contorno dorado oscuro. */
+  color: var(--color-dorado-claro);  /* Texto dorado claro. */
+  box-shadow: none;                  /* Sin resplandor. */
+}
+
+.boton--secundario:hover {
+  background: rgba(245, 184, 61, .1); /* Se rellena levemente al pasar el mouse. */
+  box-shadow: none;                  /* Mantiene sin sombra. */
+}
+
+.boton--fuego {
+  background: linear-gradient(135deg, var(--color-rojo), var(--color-rojo-oscuro)); /* Versión roja. */
+  color: #fff;                       /* Texto blanco. */
+  box-shadow: 0 10px 26px rgba(229, 9, 20, .3); /* Resplandor rojo. */
+}
+
+.boton--chico {
+  padding: 10px 16px;                /* Versión compacta. */
+  font-size: .85rem;                 /* Texto más pequeño. */
+}
+
+/* ---------- ETIQUETAS Y PÍLDORAS ---------- */
+.etiqueta {
+  display: inline-flex;              /* Se ajusta al contenido. */
+  align-self: flex-start;            /* Dentro de una columna flex no se estira a todo el ancho. */
+  padding: 4px 10px;                 /* Relleno. */
+  border-radius: 8px;                /* Esquinas suaves. */
+  background: #321012;               /* Fondo rojizo. */
+  border: 1px solid #6b2023;         /* Borde rojizo. */
+  color: #ffb8a8;                    /* Texto salmón. */
+  font-size: .7rem;                  /* Pequeña. */
+  font-weight: 700;                  /* Negrita. */
+  letter-spacing: .06em;             /* Aire entre letras. */
+  text-transform: uppercase;         /* Mayúsculas. */
+}
+
+.etiqueta--dorada {
+  background: #30220c;               /* Fondo dorado oscuro. */
+  border-color: #78551c;             /* Borde dorado. */
+  color: #ffe09b;                    /* Texto dorado claro. */
+}
+
+.pildoras {
+  display: flex;                     /* Píldoras en fila. */
+  flex-wrap: wrap;                   /* Bajan si no caben. */
+  gap: 8px;                          /* Separación. */
+}
+
+.pildora {
+  padding: 6px 14px;                 /* Relleno. */
+  border: 1px solid #5b3c14;         /* Borde dorado oscuro. */
+  border-radius: var(--radio-boton); /* Forma de píldora. */
+  color: var(--color-dorado-claro);  /* Texto dorado claro. */
+  font-size: .78rem;                 /* Pequeña. */
+  background: rgba(245, 184, 61, .06); /* Fondo dorado tenue. */
+}
+
+/* ---------- DESTACADO (antes "callout") ---------- */
+.destacado {
+  display: flex;                     /* Flex para ordenar icono y texto. */
+  flex-direction: column;            /* Apilado. */
+  gap: 6px;                          /* Separación. */
+  padding: 18px 22px;                /* Relleno. */
+  border-left: 4px solid var(--color-rojo); /* Barra roja a la izquierda. */
+  border-radius: 0 16px 16px 0;      /* Esquinas redondeadas solo a la derecha. */
+  background: linear-gradient(90deg, #2a1411, #1a1110); /* Degradado rojizo oscuro. */
+  color: #e8d9c5;                    /* Crema. */
+}
+
+.destacado strong { color: var(--color-dorado-claro); } /* El rótulo en negrita va en dorado. */
+
+/* ---------- TARJETAS ---------- */
+.tarjeta {
+  display: flex;                     /* Flex para controlar el orden interno. */
+  flex-direction: column;            /* Contenido apilado. */
+  gap: 10px;                         /* Separación entre elementos internos. */
+  min-width: 0;                      /* Evita que textos largos rompan el flex. */
+  padding: 24px;                     /* Relleno generoso. */
+  border: 1px solid var(--color-borde); /* Borde fino. */
+  border-radius: var(--radio-tarjeta); /* Esquinas redondeadas. */
+  background: linear-gradient(145deg, #1c1814, #100e0c); /* Degradado oscuro. */
+  box-shadow: var(--sombra-suave);   /* Profundidad. */
+  transition: transform .25s, border-color .25s, box-shadow .25s; /* Animación suave. */
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);       /* Se levanta. */
+  border-color: var(--color-dorado); /* Borde dorado. */
+  box-shadow: 0 22px 46px rgba(0, 0, 0, .55), 0 0 0 1px rgba(245, 184, 61, .2); /* Sombra más profunda + halo. */
+}
+
+.tarjeta--dorada {
+  border-color: #78551c;             /* Borde dorado. */
+  background: linear-gradient(145deg, #2a1f0d, #15100a); /* Fondo dorado oscuro. */
+}
+
+.tarjeta--fuego {
+  border-color: #6b2023;             /* Borde rojo. */
+  background: linear-gradient(145deg, #2c1311, #130b0a); /* Fondo rojizo. */
+}
+
+.tarjeta--estatica:hover {
+  transform: none;                   /* Tarjetas grandes de lectura no se levantan. */
+  border-color: var(--color-borde);  /* Mantienen su borde. */
+}
+
+.tarjeta__icono {
+  width: 46px;                       /* Ancho del círculo. */
+  height: 46px;                      /* Alto. */
+  display: flex;                     /* Flex para centrar el emoji. */
+  align-items: center;               /* Centrado vertical. */
+  justify-content: center;           /* Centrado horizontal. */
+  border-radius: 14px;               /* Cuadrado redondeado. */
+  background: rgba(245, 184, 61, .12); /* Fondo dorado tenue. */
+  font-size: 1.4rem;                 /* Tamaño del emoji. */
+}
+
+/* ---------- PORTADA (página de inicio) ---------- */
+.portada {
+  display: flex;                     /* Texto a un lado, logo al otro. */
+  flex-wrap: wrap-reverse;           /* En pantallas estrechas el logo sube arriba del texto. */
+  align-items: center;               /* Centrado vertical. */
+  gap: 36px;                         /* Separación. */
+}
+
+.portada__texto {
+  flex: 1 1 420px;                   /* Ocupa el espacio disponible, mínimo 420px. */
+  display: flex;                     /* Contenedor flex. */
+  flex-direction: column;            /* Elementos apilados. */
+  gap: 22px;                         /* Separación. */
+}
+
+.portada__imagen {
+  flex: 1 1 280px;                   /* Columna del logo. */
+  display: flex;                     /* Flex para centrar. */
+  justify-content: center;           /* Centrado horizontal. */
+}
+
+.portada__logo {
+  width: 100%;                       /* Se adapta a su columna... */
+  max-width: 460px;                  /* ...hasta 460px. */
+  border-radius: 32px;               /* Esquinas redondeadas. */
+  box-shadow: 0 0 80px rgba(229, 9, 20, .28); /* Resplandor rojo de fuego. */
+  animation: flotar 5s ease-in-out infinite;  /* Flota suavemente (ver @keyframes abajo). */
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }     /* Posición inicial y final. */
+  50% { transform: translateY(-12px); }      /* A mitad de ciclo sube 12px. */
+}
+
+/* ---------- FILTROS Y PESTAÑAS (interactivos) ---------- */
+.filtros {
+  display: flex;                     /* Botones en fila. */
+  flex-wrap: wrap;                   /* Bajan si no caben. */
+  gap: 8px;                          /* Separación. */
+}
+
+.filtro {
+  padding: 9px 16px;                 /* Relleno. */
+  border: 1px solid #5b3c14;         /* Borde dorado oscuro. */
+  border-radius: var(--radio-boton); /* Píldora. */
+  color: var(--color-dorado-claro);  /* Texto dorado claro. */
+  font-size: .85rem;                 /* Tamaño. */
+  font-weight: 600;                  /* Peso. */
+  transition: background .2s, color .2s; /* Cambio suave. */
+}
+
+.filtro:hover { background: rgba(245, 184, 61, .12); }  /* Hover: fondo dorado tenue. */
+
+.filtro--activo {
+  background: var(--color-dorado);   /* El filtro elegido se rellena de dorado. */
+  border-color: var(--color-dorado); /* Borde del mismo color. */
+  color: #1b1004;                    /* Texto oscuro. */
+}
+
+.panel {
+  animation: aparecer .35s ease both; /* Cada panel que se muestra entra con una animación. */
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(12px); } /* Empieza invisible y 12px más abajo. */
+  to { opacity: 1; transform: translateY(0); }      /* Termina visible y en su sitio. */
+}
+
+/* ---------- TABLA CON FLEXBOX ---------- */
+.tabla {
+  display: flex;                     /* La "tabla" es una columna de filas flex. */
+  flex-direction: column;            /* Filas apiladas. */
+}
+
+.tabla__fila {
+  display: flex;                     /* Cada fila reparte sus celdas en horizontal. */
+  gap: 18px;                         /* Separación entre celdas. */
+  padding: 16px 12px;                /* Relleno. */
+  border-bottom: 1px solid #3b3022;  /* Línea divisoria. */
+  border-radius: 12px;               /* Para que el hover se vea redondeado. */
+  transition: background .2s;        /* Cambio suave. */
+}
+
+.tabla__fila:hover:not(.tabla__fila--cabecera) { background: rgba(245, 184, 61, .07); } /* Resalta la fila bajo el mouse. */
+
+.tabla__fila--cabecera {
+  border-bottom: 2px solid var(--color-dorado); /* Línea gruesa dorada bajo los encabezados. */
+  color: var(--color-dorado-claro);  /* Encabezados dorados. */
+  font-weight: 700;                  /* Negrita. */
+  text-transform: uppercase;         /* Mayúsculas. */
+  font-size: .78rem;                 /* Pequeños. */
+  letter-spacing: .1em;              /* Aire entre letras. */
+}
+
+.tabla__celda {
+  flex: 1 1 0;                       /* Todas las celdas con el mismo ancho. */
+  min-width: 0;                      /* Permite encogerse. */
+  font-size: .92rem;                 /* Tamaño del texto. */
+}
+
+.tabla__celda--corta { flex: 0 0 150px; color: var(--color-crema); font-weight: 700; } /* Primera columna: ancho fijo y destacada. */
+
+/* ---------- BUYER PERSONAS ---------- */
+.persona__cabecera {
+  display: flex;                     /* Avatar y nombre en fila. */
+  align-items: center;               /* Centrados. */
+  gap: 14px;                         /* Separación. */
+}
+
+.persona__avatar {
+  flex: 0 0 58px;                    /* Tamaño fijo. */
+  height: 58px;                      /* Cuadrado. */
+  display: flex;                     /* Flex para centrar el número. */
+  align-items: center;               /* Centrado vertical. */
+  justify-content: center;           /* Centrado horizontal. */
+  border-radius: 50%;                /* Círculo. */
+  background: linear-gradient(135deg, var(--color-rojo), #6d080c); /* Degradado rojo. */
+  border: 2px solid var(--color-dorado); /* Aro dorado. */
+  color: #fff;                       /* Número blanco. */
+  font-family: var(--fuente-titulo); /* Fuente de títulos. */
+  font-size: 1.5rem;                 /* Grande. */
+}
+
+.persona__meta {
+  font-size: .8rem;                  /* Pequeño. */
+  color: #b8aa96;                    /* Gris cálido. */
+}
+
+.persona__dato {
+  font-size: .9rem;                  /* Datos del perfil algo más pequeños. */
+}
+
+.persona__dato strong { color: var(--color-crema); } /* Rótulo ("Frustraciones:") en crema. */
+
+.desplegable {
+  margin-top: 6px;                   /* Separación superior. */
+  border: 1px dashed #8a6428;        /* Borde punteado dorado: invita a abrir. */
+  border-radius: 12px;               /* Esquinas redondeadas. */
+  background: rgba(245, 184, 61, .05); /* Fondo tenue. */
+}
+
+.desplegable__titulo {
+  padding: 10px 14px;                /* Área clicable. */
+  cursor: pointer;                   /* Manita. */
+  color: #ffdb8a;                    /* Dorado claro. */
+  font-size: .85rem;                 /* Tamaño. */
+  font-weight: 700;                  /* Negrita. */
+}
+
+.desplegable__contenido {
+  padding: 0 14px 12px;              /* Relleno del texto oculto. */
+  font-size: .85rem;                 /* Tamaño. */
+  color: #ffdb8a;                    /* Mismo dorado claro. */
+}
+
+/* ---------- MAPA DE EMPATÍA ---------- */
+.mapa {
+  display: flex;                     /* Casillas en filas. */
+  flex-wrap: wrap;                   /* Bajan de línea. */
+  gap: 12px;                         /* Separación. */
+}
+
+.mapa__casilla {
+  flex: 1 1 calc(50% - 12px);        /* Dos casillas por fila (50% menos la mitad del gap). */
+  min-width: 230px;                  /* En pantallas estrechas pasa a una columna. */
+  display: flex;                     /* Flex interno. */
+  flex-direction: column;            /* Apilado. */
+  gap: 6px;                          /* Separación. */
+  padding: 18px;                     /* Relleno. */
+  border: 1px solid #43311b;         /* Borde. */
+  border-radius: 16px;               /* Esquinas. */
+  background: #171310;               /* Fondo oscuro. */
+  transition: border-color .2s, transform .2s; /* Animación. */
+}
+
+.mapa__casilla:hover {
+  border-color: var(--color-dorado); /* Borde dorado al pasar el mouse. */
+  transform: translateY(-3px);       /* Se levanta. */
+}
+
+/* ---------- LISTA DE VERIFICACIÓN (interactiva) ---------- */
+.verificacion {
+  display: flex;                     /* Lista en columna. */
+  flex-direction: column;            /* Apilada. */
+  gap: 10px;                         /* Separación. */
+  list-style: none;                  /* Sin viñetas. */
+  padding: 0;                        /* Sin sangría. */
+}
+
+.verificacion__item {
+  display: flex;                     /* Casilla + texto en fila. */
+  align-items: flex-start;           /* Casilla alineada con la primera línea del texto. */
+  gap: 12px;                         /* Separación. */
+  margin: 0;                         /* Anula el margen de li. */
+  padding: 14px 16px;                /* Relleno. */
+  border: 1px solid var(--color-borde); /* Borde. */
+  border-radius: 14px;               /* Esquinas. */
+  background: #15110e;               /* Fondo. */
+  cursor: pointer;                   /* Todo el recuadro es clicable. */
+  transition: border-color .2s, background .2s; /* Animación. */
+}
+
+.verificacion__etiqueta {
+  flex: 1;                           /* La etiqueta ocupa todo el recuadro: se puede hacer clic en cualquier parte. */
+  display: flex;                     /* Casilla y texto en fila. */
+  align-items: flex-start;           /* Alineados arriba. */
+  gap: 12px;                         /* Separación entre casilla y texto. */
+  cursor: pointer;                   /* Manita. */
+}
+
+.verificacion__item:hover { border-color: var(--color-dorado); } /* Hover: borde dorado. */
+
+.verificacion__casilla {
+  flex: 0 0 20px;                    /* Tamaño fijo. */
+  height: 20px;                      /* Cuadrada. */
+  margin-top: 3px;                   /* Ajuste fino vertical. */
+  accent-color: var(--color-dorado); /* La casilla nativa se pinta de dorado. */
+}
+
+.verificacion__item--hecho {
+  border-color: #4d6b45;             /* Borde verde. */
+  background: rgba(185, 217, 176, .08); /* Fondo verde tenue. */
+}
+
+.verificacion__item--hecho .verificacion__texto {
+  text-decoration: line-through;     /* Tacha el texto completado. */
+  color: var(--color-verde);         /* Texto verde. */
+}
+
+.medidor {
+  height: 10px;                      /* Alto del carril. */
+  border-radius: var(--radio-boton); /* Extremos redondeados. */
+  background: #271e12;               /* Carril oscuro. */
+  overflow: hidden;                  /* Recorta el relleno a la forma del carril. */
+}
+
+.medidor__relleno {
+  display: block;                    /* Para poder darle medidas. */
+  height: 100%;                      /* Alto completo. */
+  width: 100%;                       /* Ancho completo, recortado con scaleX. */
+  transform-origin: left center;     /* Crece desde la izquierda. */
+  transform: scaleX(var(--avance, 0)); /* JS actualiza --avance (0 a 1). */
+  background: linear-gradient(90deg, var(--color-rojo), var(--color-dorado)); /* Degradado marca. */
+  transition: transform .4s ease;    /* Animación al marcar. */
+}
+
+/* ---------- REFERENCIAS ---------- */
+.referencias {
+  display: flex;                     /* Lista en columna. */
+  flex-direction: column;            /* Apilada. */
+  gap: 12px;                         /* Separación. */
+  padding-left: 1.4rem;              /* Espacio para los números. */
+}
+
+.referencias li {
+  font-size: .88rem;                 /* Tamaño. */
+  overflow-wrap: anywhere;           /* Los enlaces largos se parten y no desbordan. */
+}
+
+/* ---------- ANIMACIÓN DE ENTRADA AL HACER SCROLL ---------- */
+.revelar {
+  opacity: 0;                        /* Empieza invisible. */
+  transform: translateY(24px);       /* Y 24px más abajo. */
+  transition: opacity .6s ease, transform .6s ease; /* Se anima al aparecer. */
+}
+
+.revelar:nth-child(2) { transition-delay: .08s; }  /* El 2.º elemento hermano entra 80 ms después: efecto escalonado. */
+.revelar:nth-child(3) { transition-delay: .16s; }  /* El 3.º entra a los 160 ms. */
+.revelar:nth-child(4) { transition-delay: .24s; }  /* El 4.º a los 240 ms. */
+
+.revelar--visible {
+  opacity: 1;                        /* JS añade esta clase y el elemento se muestra. */
+  transform: translateY(0);          /* En su posición natural. */
+}
+
+/* ---------- AVISO "SIN JAVASCRIPT" ---------- */
+.sin-js .revelar { opacity: 1; transform: none; } /* Si JS falla, nada queda oculto. */
+
+/* ---------- ADAPTACIÓN A MÓVIL ---------- */
+@media (max-width: 700px) {
+  .tabla__fila { flex-direction: column; gap: 6px; } /* En móvil las celdas se apilan. */
+  .tabla__fila--cabecera { display: none; }          /* Y los encabezados sobran. */
+  .tabla__celda--corta { flex: none; }               /* La primera celda deja de tener ancho fijo. */
+}
+
+/* ---------- IMPRESIÓN (botón "Guardar como PDF") ---------- */
+@media print {
+  .barra-lateral, .barra-movil, .progreso, .acciones, .pagina-nav, .filtros { display: none !important; } /* Oculta lo interactivo. */
+  body { background: #fff; color: #000; }            /* Papel blanco, tinta negra. */
+  .pagina { min-height: auto; padding: 20px 0; }     /* Páginas compactas. */
+  .tarjeta { box-shadow: none; background: #fff; border-color: #999; break-inside: avoid; } /* Tarjetas simples sin cortarse. */
+  h1, h2, h3, h4, p, li, .estadistica { color: #000; } /* Todo el texto en negro. */
+  .revelar { opacity: 1; transform: none; }          /* Todo visible. */
+}
+
+
+/* ---------- Navegación agrupada por fases ---------- */
+.fase-nav { margin: 10px 0; border: 1px solid rgba(245,184,61,.18); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.025); }
+.fase-nav > summary { list-style: none; cursor: pointer; display:flex; align-items:center; gap:10px; padding:12px 10px; color:#f7ead4; }
+.fase-nav > summary::-webkit-details-marker { display:none; }
+.fase-nav > summary:hover { background:rgba(245,184,61,.08); }
+.fase-nav > summary strong { display:block; font-size:.72rem; line-height:1.35; letter-spacing:.035em; }
+.fase-nav > summary small { display:block; margin-top:3px; color:#b9a994; font-size:.68rem; }
+.fase-nav__numero { display:flex; flex:0 0 32px; height:32px; align-items:center; justify-content:center; border-radius:10px; background:#2a1d0e; color:var(--color-dorado-claro); font-weight:800; font-size:.75rem; }
+.fase-nav__chevron { margin-left:auto; color:var(--color-dorado); transition:transform .2s; }
+.fase-nav[open] > summary .fase-nav__chevron { transform:rotate(180deg); }
+.fase-nav .barra-lateral__menu { padding:0 8px 8px; margin:0; gap:3px; }
+.fase-nav .barra-lateral__enlace { gap:8px; padding:7px 8px; font-size:.82rem; border-radius:10px; }
+.fase-nav .barra-lateral__numero { flex-basis:25px; height:25px; font-size:.67rem; }
+.barra-lateral nav { margin-top:4px; }
+@media (max-width: 900px) { .fase-nav > summary { padding:10px 8px; } }
+
+/* ---------- Contenido de la etapa DEFINIR ---------- */
+.bloque-estrategico { margin:30px 0; padding:clamp(18px,3vw,30px); border:1px solid var(--color-borde); border-radius:22px; background:rgba(255,255,255,.025); }
+.bloque-estrategico h2 { margin-top:0; }
+.bloque-estrategico h3 { margin-bottom:8px; }
+.tarjetas-estrategia { display:flex; flex-wrap:wrap; gap:14px; margin:20px 0; }
+.tarjeta-estrategia { flex:1 1 210px; min-width:0; padding:20px; border:1px solid var(--color-borde); border-radius:17px; background:rgba(255,255,255,.035); }
+.tarjeta-estrategia p { margin:.55rem 0; }
+.tarjeta-estrategia ul { padding-left:1.2rem; }
+.tarjeta-estrategia li { margin:.45rem 0; }
+.etiqueta { display:inline-block; padding:5px 9px; border-radius:100px; background:rgba(245,184,61,.12); color:var(--color-dorado-claro); font-size:.72rem; font-weight:700; }
+.tabla-scroll { width:100%; overflow-x:auto; margin:18px 0; }
+.tabla-estrategia { width:100%; border-collapse:collapse; min-width:650px; font-size:.9rem; }
+.tabla-estrategia th,.tabla-estrategia td { text-align:left; vertical-align:top; padding:13px 14px; border-bottom:1px solid var(--color-borde); }
+.tabla-estrategia thead th { background:rgba(245,184,61,.11); color:var(--color-dorado-claro); }
+.tabla-estrategia tbody th { color:var(--color-dorado-claro); }
+.lista-oportunidades { padding-left:1.4rem; }
+.lista-oportunidades li { padding:7px 0; }
+.frase-estrategica { margin:28px 0; padding:clamp(24px,4vw,42px); border-radius:24px; border:1px solid rgba(245,184,61,.38); background:linear-gradient(135deg,rgba(142,31,36,.25),rgba(245,184,61,.08)); }
+.frase-estrategica > span { color:var(--color-dorado); letter-spacing:.14em; font-size:.73rem; font-weight:800; }
+.frase-estrategica h2 { max-width:900px; font-size:clamp(1.7rem,3.5vw,2.8rem); line-height:1.12; margin:14px 0; }
+.perfil-estrategia { display:flex; align-items:flex-start; gap:20px; }
+.perfil-estrategia__sello { display:flex; flex:0 0 70px; height:70px; justify-content:center; align-items:center; border-radius:50%; background:linear-gradient(135deg,#8E1F24,#F4C65D); color:#fff; font-size:2rem; font-weight:800; }
+.dos-columnas { display:flex; flex-wrap:wrap; gap:16px; margin:18px 0; }
+.panel-lienzo { flex:1 1 280px; padding:22px; border:1px solid var(--color-borde); border-radius:17px; background:rgba(255,255,255,.025); }
+.panel-lienzo--valor { border-color:rgba(245,184,61,.35); }
+.panel-lienzo h3 { margin-top:0; color:var(--color-dorado-claro); }
+.panel-lienzo h4 { margin-bottom:6px; }
+.panel-lienzo li { margin:.4rem 0; }
+.flujo-valor { display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; margin:20px 0; }
+.flujo-valor div { display:flex; flex:1 1 180px; flex-direction:column; gap:8px; padding:17px; border-radius:14px; background:rgba(245,184,61,.08); border:1px solid rgba(245,184,61,.2); }
+.flujo-valor div strong { color:var(--color-dorado-claro); }
+.flujo-valor > b { align-self:center; color:var(--color-dorado); }
+.mapa-perceptual { margin:28px 0; }
+.mapa-perceptual__plano { min-height:330px; position:relative; margin:12px 0 0 36px; border-left:2px solid #b8a58d; border-bottom:2px solid #b8a58d; background:linear-gradient(90deg,transparent 49.7%,rgba(255,255,255,.12) 50%,transparent 50.3%),linear-gradient(0deg,transparent 49.7%,rgba(255,255,255,.12) 50%,transparent 50.3%); }
+.mapa-perceptual__eje-y { display:block; color:var(--color-tenue); font-size:.8rem; }
+.mapa-perceptual__ejes { display:flex; justify-content:space-between; margin-left:36px; color:var(--color-tenue); font-size:.8rem; }
+.mapa-punto { position:absolute; padding:7px 10px; border-radius:10px; background:#33271d; border:1px solid #7b6242; color:#fff3df; font-size:.78rem; max-width:150px; }
+.mapa-punto small { display:block; color:#f4c65d; }
+.mapa-punto--sabroza { left:12%; top:24%; border-color:#f4c65d; background:#6c2022; }
+.mapa-punto--sabrositas { left:58%; top:12%; }
+.mapa-punto--arepazo { left:26%; top:55%; }
+.mapa-punto--tricolor { left:48%; top:43%; }
+.mapa-punto--fusion { left:68%; top:70%; }
+.paleta-estrategia { display:flex; flex-wrap:wrap; gap:12px; margin:18px 0; }
+.paleta-estrategia > div { flex:1 1 145px; display:flex; flex-direction:column; gap:5px; }
+.paleta-estrategia > div > span { height:64px; border-radius:12px; background:var(--muestra); border:1px solid rgba(255,255,255,.15); }
+.paleta-estrategia .muestra-rojo > span { background:#8E1F24; }
+.paleta-estrategia .muestra-maiz > span { background:#F4C65D; }
+.paleta-estrategia .muestra-cafe > span { background:#2F211D; }
+.paleta-estrategia .muestra-crema > span { background:#FFF8EC; }
+.paleta-estrategia code { color:var(--color-dorado-claro); }
+.paleta-estrategia small { color:var(--color-tenue); }
+.aplicacion-numero { display:inline-flex; width:38px; height:38px; align-items:center; justify-content:center; border-radius:12px; background:rgba(245,184,61,.14); color:var(--color-dorado-claro); font-weight:800; }
+.referencias-estrategia li { margin:.7rem 0; }
+@media (max-width:600px) { .perfil-estrategia { flex-direction:column; } .mapa-perceptual__plano { min-height:390px; margin-left:22px; } .mapa-punto { font-size:.7rem; max-width:112px; padding:6px; } .mapa-perceptual__ejes { margin-left:22px; } }
+@media print { .fase-nav:not([open]) .barra-lateral__menu { display:block; } .bloque-estrategico,.frase-estrategica { break-inside:avoid; } }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" class="sin-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Referencias y trazabilidad | La Sabroza · Investigación de marketing</title>
+  <meta name="description" content="Investigación de marketing de La Sabroza: entender al cliente antes de vender más.">
+  <link rel="icon" href="img/logo-la-sabroza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header class="barra-movil">
+    <a class="barra-movil__marca" href="index.html"><img src="img/logo-la-sabroza.png" alt="" width="40" height="40">La Sabroza</a>
+    <button class="barra-movil__boton" type="button" data-menu-abrir aria-controls="barra-lateral" aria-expanded="false">☰ Menú</button>
+  </header>
+  <div class="velo"></div>
+  <div class="progreso" aria-hidden="true"><span class="progreso__relleno"></span></div>
+
+  <div class="sitio">
+
+  <!-- ===== BARRA LATERAL ESTÁTICA (se repite igual en las 8 páginas; solo cambia cuál enlace está activo) ===== -->
+  <aside class="barra-lateral" id="barra-lateral" aria-label="Navegación principal">
+    <a class="barra-lateral__marca" href="index.html"><img class="barra-lateral__logo" src="img/logo-la-sabroza.png" alt="Logo de La Sabroza" width="132" height="132"><span class="barra-lateral__subtitulo">Investigación de marketing</span></a>
+    <nav aria-label="Fases del proyecto">
+      <details class="fase-nav" open><summary><span class="fase-nav__numero">01</span><span><strong>FASE 1 · ENTENDER</strong><small>Problema e investigación</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="index.html"><span class="barra-lateral__numero">★</span>Inicio</a></li><li><a class="barra-lateral__enlace" href="problema.html"><span class="barra-lateral__numero">01</span>Problema</a></li><li><a class="barra-lateral__enlace" href="contexto.html"><span class="barra-lateral__numero">02</span>Contexto</a></li><li><a class="barra-lateral__enlace" href="objetivo.html"><span class="barra-lateral__numero">03</span>Objetivos</a></li><li><a class="barra-lateral__enlace" href="segmentacion.html"><span class="barra-lateral__numero">04</span>Segmentación</a></li><li><a class="barra-lateral__enlace" href="personas.html"><span class="barra-lateral__numero">05</span>Buyer personas</a></li><li><a class="barra-lateral__enlace" href="empatia.html"><span class="barra-lateral__numero">06</span>Empatía</a></li><li><a class="barra-lateral__enlace barra-lateral__enlace--activo" href="fuentes.html" aria-current="page"><span class="barra-lateral__numero">07</span>Fuentes ENTENDER</a></li></ul></details>
+      <details class="fase-nav"><summary><span class="fase-nav__numero">02</span><span><strong>FASE 2 · DEFINIR</strong><small>Estrategia de marca</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="benchmarking.html"><span class="barra-lateral__numero">06</span>Benchmarking</a></li><li><a class="barra-lateral__enlace" href="propuesta-valor.html"><span class="barra-lateral__numero">07</span>Propuesta de valor</a></li><li><a class="barra-lateral__enlace" href="posicionamiento.html"><span class="barra-lateral__numero">08</span>Posicionamiento</a></li><li><a class="barra-lateral__enlace" href="identidad-marca.html"><span class="barra-lateral__numero">09</span>Identidad de marca</a></li><li><a class="barra-lateral__enlace" href="aplicaciones.html"><span class="barra-lateral__numero">10</span>Aplicaciones y fuentes</a></li></ul></details>
+    </nav>
+    <div class="barra-lateral__pie"><p>De la investigación a una estrategia de marca coherente.</p><a class="boton boton--fuego boton--chico" href="problema.html">Volver al problema →</a></div>
+  </aside>
+
+    <div class="contenido">
+      <main class="pagina" id="contenido-principal">
+
+        <header class="revelar">
+          <p class="sobretitulo">07 · Referencias y trazabilidad</p>
+          <h1>Fuentes <span class="destacado-dorado">consultadas.</span></h1>
+        </header>
+        <p class="introduccion revelar">Las fuentes externas contextualizan la investigación. La evidencia específica sobre La Sabroza procede, por ahora, de la entrevista al responsable descrita en el documento base.</p>
+
+        <article class="tarjeta tarjeta--estatica revelar">
+          <ol class="referencias" id="lista-referencias">
+            <li>Departamento Administrativo Nacional de Estadística (DANE). (2025). <i>Encuesta de Micronegocios (EMICRON): Vendedores ambulantes 2024</i>. https://www.dane.gov.co/files/operaciones/EMICRON/pres-EMICRONVendedoresAmbulantes-2024.pdf</li>
+            <li>Departamento Administrativo Nacional de Estadística (DANE). (s. f.). <i>Encuesta de Micronegocios (EMICRON): información histórica</i>. https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/micronegocios/micronegocios-historicos</li>
+            <li>Banco de la República. (2026, 15 de abril). <i>Resultados de la Encuesta de Servicios de Pago Electrónicos de 2025</i>. https://www.banrep.gov.co/es/publicaciones-investigaciones/resultados-encuesta-servicios-pago-electronicos/2025</li>
+            <li>La Sabroza. (s. f.). <i>Entrevista al responsable del negocio</i> [Comunicación personal; completar fecha]. Esta fuente se cita en el texto, pero no se incluye en la lista de referencias APA si se trata de una comunicación personal no recuperable.</li>
+          </ol>
+          <div class="acciones">
+            <button class="boton boton--secundario boton--chico" type="button" data-copiar="#lista-referencias">Copiar referencias</button>
+            <button class="boton boton--secundario boton--chico" type="button" data-imprimir>Imprimir / guardar PDF</button>
+          </div>
+        </article>
+
+        <section class="fila" aria-label="Hechos e hipótesis">
+          <article class="tarjeta tarjeta--dorada columna-6 revelar">
+            <span class="etiqueta etiqueta--dorada">Hecho informado</span>
+            <h3>Hechos informados</h3>
+            <p>Ausencia de menú/catálogo y de publicidad específica, según el responsable.</p>
+          </article>
+          <article class="tarjeta tarjeta--fuego columna-6 revelar">
+            <span class="etiqueta">Por verificar</span>
+            <h3>Hipótesis pendientes</h3>
+            <p>Que estas condiciones reduzcan ventas o provoquen pérdida de clientes. Se requiere evidencia primaria para comprobarlo.</p>
+          </article>
+        </section>
+        <div class="destacado revelar">
+          <span><strong>Siguiente paso:</strong> la evidencia que falta está en las conversaciones con clientes. Sal a escucharlos con las preguntas de esta investigación.</span>
+        </div>
+        <!-- ===== NAVEGACIÓN ENTRE PÁGINAS ===== -->
+        <nav class="pagina-nav" aria-label="Anterior y siguiente">
+          <a class="boton boton--secundario" href="empatia.html" rel="prev">← Empatía</a>
+          <a class="boton" href="index.html">Volver al inicio ↺</a>
+        </nav>
+      </main>
+      <footer class="pie-pagina">LA SABROZA · Fase Entender · Prototipo académico de investigación. No contiene propuestas de campaña ni afirma resultados comerciales no verificados.</footer>
+    </div>
+  </div>
+
+  <script src="js/interaccion.js" defer></script>
+</body>
+</html>

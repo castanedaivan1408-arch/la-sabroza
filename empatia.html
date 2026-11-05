@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" class="sin-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapas de empatía | La Sabroza · Investigación de marketing</title>
+  <meta name="description" content="Investigación de marketing de La Sabroza: entender al cliente antes de vender más.">
+  <link rel="icon" href="img/logo-la-sabroza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header class="barra-movil">
+    <a class="barra-movil__marca" href="index.html"><img src="img/logo-la-sabroza.png" alt="" width="40" height="40">La Sabroza</a>
+    <button class="barra-movil__boton" type="button" data-menu-abrir aria-controls="barra-lateral" aria-expanded="false">☰ Menú</button>
+  </header>
+  <div class="velo"></div>
+  <div class="progreso" aria-hidden="true"><span class="progreso__relleno"></span></div>
+
+  <div class="sitio">
+
+  <!-- ===== BARRA LATERAL ESTÁTICA (se repite igual en las 8 páginas; solo cambia cuál enlace está activo) ===== -->
+  <aside class="barra-lateral" id="barra-lateral" aria-label="Navegación principal">
+    <a class="barra-lateral__marca" href="index.html"><img class="barra-lateral__logo" src="img/logo-la-sabroza.png" alt="Logo de La Sabroza" width="132" height="132"><span class="barra-lateral__subtitulo">Investigación de marketing</span></a>
+    <nav aria-label="Fases del proyecto">
+      <details class="fase-nav" open><summary><span class="fase-nav__numero">01</span><span><strong>FASE 1 · ENTENDER</strong><small>Problema e investigación</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="index.html"><span class="barra-lateral__numero">★</span>Inicio</a></li><li><a class="barra-lateral__enlace" href="problema.html"><span class="barra-lateral__numero">01</span>Problema</a></li><li><a class="barra-lateral__enlace" href="contexto.html"><span class="barra-lateral__numero">02</span>Contexto</a></li><li><a class="barra-lateral__enlace" href="objetivo.html"><span class="barra-lateral__numero">03</span>Objetivos</a></li><li><a class="barra-lateral__enlace" href="segmentacion.html"><span class="barra-lateral__numero">04</span>Segmentación</a></li><li><a class="barra-lateral__enlace" href="personas.html"><span class="barra-lateral__numero">05</span>Buyer personas</a></li><li><a class="barra-lateral__enlace barra-lateral__enlace--activo" href="empatia.html" aria-current="page"><span class="barra-lateral__numero">06</span>Empatía</a></li><li><a class="barra-lateral__enlace" href="fuentes.html"><span class="barra-lateral__numero">07</span>Fuentes ENTENDER</a></li></ul></details>
+      <details class="fase-nav"><summary><span class="fase-nav__numero">02</span><span><strong>FASE 2 · DEFINIR</strong><small>Estrategia de marca</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="benchmarking.html"><span class="barra-lateral__numero">06</span>Benchmarking</a></li><li><a class="barra-lateral__enlace" href="propuesta-valor.html"><span class="barra-lateral__numero">07</span>Propuesta de valor</a></li><li><a class="barra-lateral__enlace" href="posicionamiento.html"><span class="barra-lateral__numero">08</span>Posicionamiento</a></li><li><a class="barra-lateral__enlace" href="identidad-marca.html"><span class="barra-lateral__numero">09</span>Identidad de marca</a></li><li><a class="barra-lateral__enlace" href="aplicaciones.html"><span class="barra-lateral__numero">10</span>Aplicaciones y fuentes</a></li></ul></details>
+    </nav>
+    <div class="barra-lateral__pie"><p>De la investigación a una estrategia de marca coherente.</p><a class="boton boton--fuego boton--chico" href="problema.html">Volver al problema →</a></div>
+  </aside>
+
+    <div class="contenido">
+      <main class="pagina" id="contenido-principal">
+
+        <header class="revelar">
+          <p class="sobretitulo">06 · Mapas de empatía</p>
+          <h1>Explorar la experiencia <span class="destacado-dorado">desde el punto de vista del consumidor.</span></h1>
+        </header>
+        <p class="introduccion revelar">Mapas provisionales para guiar preguntas de investigación. No deben presentarse como testimonios reales.</p>
+
+        <!-- ===== PESTAÑAS INTERACTIVAS ===== -->
+        <div class="filtros" data-pestanas="mapas" role="tablist" aria-label="Elegir mapa de empatía">
+          <button class="filtro filtro--activo" type="button" role="tab" data-pestana="camila" aria-selected="true">Mapa 1 · Camila</button>
+          <button class="filtro" type="button" role="tab" data-pestana="andres" aria-selected="false">Mapa 2 · Andrés</button>
+        </div>
+
+        <article class="tarjeta tarjeta--estatica panel" data-panel-de="mapas" data-panel="camila">
+          <h3>Mapa 1 · Camila, estudiante práctica</h3>
+          <div class="mapa">
+              <div class="mapa__casilla"><h4>Piensa y siente</h4><p>“Quiero algo rico, rápido y que se ajuste a mi presupuesto”.</p></div>
+              <div class="mapa__casilla"><h4>Ve</h4><p>Un puesto en su recorrido; la claridad del producto y del precio puede influir en que se detenga.</p></div>
+              <div class="mapa__casilla"><h4>Escucha</h4><p>Recomendaciones de compañeros y comentarios de personas cercanas.</p></div>
+              <div class="mapa__casilla"><h4>Dice y hace</h4><p>Pregunta por precios, observa productos o elige lo que reconoce; son comportamientos por comprobar.</p></div>
+              <div class="mapa__casilla"><h4>Frustraciones</h4><p>No comprender la oferta rápidamente o descubrir el precio cuando ya está decidiendo.</p></div>
+              <div class="mapa__casilla"><h4>Necesidades / expectativas</h4><p>Información clara, elección sencilla y una compra compatible con su tiempo y presupuesto.</p></div>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta--estatica panel" data-panel-de="mapas" data-panel="andres" hidden>
+          <h3>Mapa 2 · Andrés, trabajador con poco tiempo</h3>
+          <div class="mapa">
+              <div class="mapa__casilla"><h4>Piensa y siente</h4><p>“Necesito comer sin perder demasiado tiempo y saber cuánto voy a gastar”.</p></div>
+              <div class="mapa__casilla"><h4>Ve</h4><p>Alternativas de comida a lo largo de su ruta y señales disponibles en cada puesto.</p></div>
+              <div class="mapa__casilla"><h4>Escucha</h4><p>Recomendaciones de compañeros y experiencias de otros compradores.</p></div>
+              <div class="mapa__casilla"><h4>Dice y hace</h4><p>Puede elegir lo familiar, preguntar por el precio o priorizar la rapidez; debe observarse.</p></div>
+              <div class="mapa__casilla"><h4>Frustraciones</h4><p>Demoras, incertidumbre sobre el costo o no disponer del método de pago que suele usar.</p></div>
+              <div class="mapa__casilla"><h4>Necesidades / expectativas</h4><p>Oferta fácil de entender, precio conocido, disponibilidad y proceso de compra ágil.</p></div>
+          </div>
+        </article>
+
+        <!-- ===== CÓMO VALIDAR: lista interactiva que recuerda tu avance ===== -->
+        <article class="tarjeta tarjeta--fuego tarjeta--estatica revelar">
+          <h3>Cómo validar estos mapas</h3>
+          <p>Entrevistas breves a compradores y no compradores del sector. Marca cada paso a medida que lo cumplas: tu avance queda guardado en este navegador.</p>
+          <ul class="verificacion" data-verificacion="validacion-mapas">
+            <li class="verificacion__item"><label class="verificacion__etiqueta"><input class="verificacion__casilla" type="checkbox"> <span class="verificacion__texto">Entrevistar a compradores y a no compradores del sector.</span></label></li>
+            <li class="verificacion__item"><label class="verificacion__etiqueta"><input class="verificacion__casilla" type="checkbox"> <span class="verificacion__texto">Preguntar por experiencias recientes.</span></label></li>
+            <li class="verificacion__item"><label class="verificacion__etiqueta"><input class="verificacion__casilla" type="checkbox"> <span class="verificacion__texto">No inducir respuestas.</span></label></li>
+            <li class="verificacion__item"><label class="verificacion__etiqueta"><input class="verificacion__casilla" type="checkbox"> <span class="verificacion__texto">Registrar frases textuales solo con autorización.</span></label></li>
+          </ul>
+          <div class="medidor" aria-hidden="true"><span class="medidor__relleno" data-medidor></span></div>
+          <p class="nota" data-medidor-texto>0 de 4 pasos listos</p>
+          <div class="acciones"><a class="boton" href="fuentes.html">Revisar las fuentes →</a></div>
+        </article>
+        <!-- ===== NAVEGACIÓN ENTRE PÁGINAS ===== -->
+        <nav class="pagina-nav" aria-label="Anterior y siguiente">
+          <a class="boton boton--secundario" href="personas.html" rel="prev">← Buyer personas</a>
+          <a class="boton" href="fuentes.html" rel="next">Fuentes →</a>
+        </nav>
+      </main>
+      <footer class="pie-pagina">LA SABROZA · Fase Entender · Prototipo académico de investigación. No contiene propuestas de campaña ni afirma resultados comerciales no verificados.</footer>
+    </div>
+  </div>
+
+  <script src="js/interaccion.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+  <!-- Declara que es un documento HTML5 (activa el modo estándar del navegador). -->
+<html lang="es" class="sin-js">
+  <!-- <html> envuelve todo. lang=es indica idioma español. La clase sin-js la quita JavaScript al cargar (plan B si JS falla). -->
+<head>
+  <!-- <head>: datos que el navegador necesita pero que no se ven en la página. -->
+  <meta charset="utf-8">
+  <!-- Codificación UTF-8: permite tildes y la ñ sin símbolos raros. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Hace que el diseño se adapte al ancho real del móvil. -->
+  <title>Inicio | La Sabroza · Investigación de marketing</title>
+  <!-- Texto de la pestaña del navegador (y de Google). -->
+  <meta name="description" content="Investigación de marketing de La Sabroza: entender al cliente antes de vender más.">
+  <!-- Descripción que aparece en buscadores. -->
+  <link rel="icon" href="img/logo-la-sabroza.png">
+  <!-- Icono de la pestaña: el logo. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Acelera la conexión con Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap">
+  <!-- Carga las fuentes Oswald (títulos) y DM Sans (texto). -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 1.º CSS: variables, reinicio y tipografía. -->
+  <link rel="stylesheet" href="css/estructura.css">
+  <!-- 2.º CSS: barra lateral y esqueleto de la página. -->
+  <link rel="stylesheet" href="css/componentes.css">
+  <!-- 3.º CSS: tarjetas, botones, tablas, etc. El orden importa: lo último gana en caso de empate. -->
+</head>
+<body>
+  <!-- <body>: todo lo que se ve. -->
+
+  <!-- Barra superior que SOLO se ve en móvil (el CSS la oculta en escritorio). Contiene el botón para abrir el menú. -->
+  <header class="barra-movil">
+    <a class="barra-movil__marca" href="index.html"><img src="/la-sabroza/img/logo_sin_fondo_la_sabroza.png" alt="" width="40" height="40">La Sabroza</a>
+    <button class="barra-movil__boton" type="button" data-menu-abrir aria-controls="barra-lateral" aria-expanded="false">☰ Menú</button>
+  </header>
+  <div class="velo"></div>
+  <!-- Capa oscura detrás del menú móvil; JavaScript la muestra al abrir. -->
+  <div class="progreso" aria-hidden="true"><span class="progreso__relleno"></span></div>
+  <!-- Barra de progreso de lectura (JavaScript le da el ancho). -->
+
+  <div class="sitio">
+  <!-- .sitio es el contenedor flex principal: barra lateral + contenido lado a lado. -->
+
+  <!-- ===== BARRA LATERAL ESTÁTICA (se repite igual en las 8 páginas; solo cambia cuál enlace está activo) ===== -->
+  <aside class="barra-lateral" id="barra-lateral" aria-label="Navegación principal">
+    <a class="barra-lateral__marca" href="index.html"><img class="barra-lateral__logo" src="/la-sabroza/img/logo_sin_fondo_la_sabroza.png" alt="Logo de La Sabroza" width="132" height="132"><span class="barra-lateral__subtitulo">Investigación de marketing</span></a>
+    <nav aria-label="Fases del proyecto">
+      <details class="fase-nav" open><summary><span class="fase-nav__numero">01</span><span><strong>FASE 1 · ENTENDER</strong><small>Problema e investigación</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace barra-lateral__enlace--activo" href="index.html" aria-current="page"><span class="barra-lateral__numero">★</span>Inicio</a></li><li><a class="barra-lateral__enlace" href="problema.html"><span class="barra-lateral__numero">01</span>Problema</a></li><li><a class="barra-lateral__enlace" href="contexto.html"><span class="barra-lateral__numero">02</span>Contexto</a></li><li><a class="barra-lateral__enlace" href="objetivo.html"><span class="barra-lateral__numero">03</span>Objetivos</a></li><li><a class="barra-lateral__enlace" href="segmentacion.html"><span class="barra-lateral__numero">04</span>Segmentación</a></li><li><a class="barra-lateral__enlace" href="personas.html"><span class="barra-lateral__numero">05</span>Buyer personas</a></li><li><a class="barra-lateral__enlace" href="empatia.html"><span class="barra-lateral__numero">06</span>Empatía</a></li><li><a class="barra-lateral__enlace" href="fuentes.html"><span class="barra-lateral__numero">07</span>Fuentes ENTENDER</a></li></ul></details>
+      <details class="fase-nav"><summary><span class="fase-nav__numero">02</span><span><strong>FASE 2 · DEFINIR</strong><small>Estrategia de marca</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="benchmarking.html"><span class="barra-lateral__numero">06</span>Benchmarking</a></li><li><a class="barra-lateral__enlace" href="propuesta-valor.html"><span class="barra-lateral__numero">07</span>Propuesta de valor</a></li><li><a class="barra-lateral__enlace" href="posicionamiento.html"><span class="barra-lateral__numero">08</span>Posicionamiento</a></li><li><a class="barra-lateral__enlace" href="identidad-marca.html"><span class="barra-lateral__numero">09</span>Identidad de marca</a></li><li><a class="barra-lateral__enlace" href="aplicaciones.html"><span class="barra-lateral__numero">10</span>Aplicaciones y fuentes</a></li></ul></details>
+    </nav>
+    <div class="barra-lateral__pie"><p>De la investigación a una estrategia de marca coherente.</p><a class="boton boton--fuego boton--chico" href="problema.html">Volver al problema →</a></div>
+  </aside>
+
+    <div class="contenido">
+  <!-- .contenido ocupa todo el espacio a la derecha del sidebar. -->
+      <main class="pagina" id="contenido-principal">
+  <!-- <main> = la página (sección) actual. Ocupa mínimo una pantalla completa. -->
+
+        <!-- ===== PORTADA: promesa + pregunta guía + CTAs ===== -->
+        <section class="portada" aria-labelledby="titulo-inicio">
+          <div class="portada__texto">
+            <p class="sobretitulo">Fase 01 · Entender</p>
+            <h1 id="titulo-inicio">Antes de vender más,<br><span class="destacado-dorado">entendamos mejor.</span></h1>
+            <p class="introduccion">Investigación inicial sobre cómo La Sabroza presenta su oferta, cómo pueden conocerla los consumidores y qué barreras podrían influir en la captación de clientes.</p>
+            <div class="pildoras">
+              <span class="pildora">Comidas rápidas</span>
+              <span class="pildora">Negocio callejero</span>
+              <span class="pildora">Investigación exploratoria</span>
+            </div>
+            <div class="destacado">
+              <strong>Pregunta guía</strong>
+              <span>¿Cómo se relaciona la ausencia de herramientas de presentación y difusión de la oferta comercial con la captación de clientes potenciales de La Sabroza?</span>
+            </div>
+            <p class="nota">Documento de trabajo académico · Los perfiles de consumidores son hipótesis, no personas investigadas ni validadas.</p>
+            <div class="acciones">
+              <a class="boton" href="problema.html">Explorar la investigación →</a>
+              <a class="boton boton--secundario" href="personas.html">Conocer a los 4 compradores</a>
+              <button class="boton boton--secundario" type="button" data-imprimir>Imprimir / guardar PDF</button>
+            </div>
+          </div>
+          <div class="portada__imagen">
+            <img class="portada__logo" src="/la-sabroza/img/logo_sin_fondo_la_sabroza.png" alt="Logo oficial de La Sabroza: arepa a la parrilla entre llamas, espátula y tenedor dorados" width="460" height="460">
+          </div>
+        </section>
+
+        <!-- ===== RUTA DE LECTURA: 3 razones para seguir leyendo ===== -->
+        <section class="fila" aria-label="Qué encontrarás en esta investigación">
+          <article class="tarjeta columna-4 revelar">
+            <span class="tarjeta__icono" aria-hidden="true">🔎</span>
+            <h3>Lo que ya sabemos</h3>
+            <p>Hechos informados por el responsable del negocio, separados de lo que aún es hipótesis.</p>
+            <a href="problema.html">Ver el problema →</a>
+          </article>
+          <article class="tarjeta columna-4 revelar">
+            <span class="tarjeta__icono" aria-hidden="true">🧭</span>
+            <h3>Lo que falta descubrir</h3>
+            <p>Vacíos de información y un objetivo claro para investigar sin adivinar.</p>
+            <a href="objetivo.html">Ver el objetivo →</a>
+          </article>
+          <article class="tarjeta columna-4 revelar">
+            <span class="tarjeta__icono" aria-hidden="true">🍔</span>
+            <h3>A quién escuchar</h3>
+            <p>Cuatro perfiles hipotéticos y dos mapas de empatía para orientar las primeras preguntas.</p>
+            <a href="personas.html">Ver los perfiles →</a>
+          </article>
+        </section>
+        <!-- ===== NAVEGACIÓN ENTRE PÁGINAS ===== -->
+        <nav class="pagina-nav" aria-label="Anterior y siguiente">
+          <a class="boton boton--secundario" href="fuentes.html">Ir a las fuentes</a>
+          <a class="boton" href="problema.html" rel="next">Problema →</a>
+        </nav>
+      </main>
+      <footer class="pie-pagina">LA SABROZA · Fase Entender · Prototipo académico de investigación. No contiene propuestas de campaña ni afirma resultados comerciales no verificados.</footer>
+    </div>
+  </div>
+
+  <script src="js/interaccion.js" defer></script>
+  <!-- Carga el JavaScript. defer = espera a que el HTML esté listo. -->
+</body>
+</html>

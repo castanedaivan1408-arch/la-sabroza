@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" class="sin-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segmentación general | La Sabroza · Investigación de marketing</title>
+  <meta name="description" content="Investigación de marketing de La Sabroza: entender al cliente antes de vender más.">
+  <link rel="icon" href="img/logo-la-sabroza.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header class="barra-movil">
+    <a class="barra-movil__marca" href="index.html"><img src="img/logo-la-sabroza.png" alt="" width="40" height="40">La Sabroza</a>
+    <button class="barra-movil__boton" type="button" data-menu-abrir aria-controls="barra-lateral" aria-expanded="false">☰ Menú</button>
+  </header>
+  <div class="velo"></div>
+  <div class="progreso" aria-hidden="true"><span class="progreso__relleno"></span></div>
+
+  <div class="sitio">
+
+  <!-- ===== BARRA LATERAL ESTÁTICA (se repite igual en las 8 páginas; solo cambia cuál enlace está activo) ===== -->
+  <aside class="barra-lateral" id="barra-lateral" aria-label="Navegación principal">
+    <a class="barra-lateral__marca" href="index.html"><img class="barra-lateral__logo" src="img/logo-la-sabroza.png" alt="Logo de La Sabroza" width="132" height="132"><span class="barra-lateral__subtitulo">Investigación de marketing</span></a>
+    <nav aria-label="Fases del proyecto">
+      <details class="fase-nav" open><summary><span class="fase-nav__numero">01</span><span><strong>FASE 1 · ENTENDER</strong><small>Problema e investigación</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="index.html"><span class="barra-lateral__numero">★</span>Inicio</a></li><li><a class="barra-lateral__enlace" href="problema.html"><span class="barra-lateral__numero">01</span>Problema</a></li><li><a class="barra-lateral__enlace" href="contexto.html"><span class="barra-lateral__numero">02</span>Contexto</a></li><li><a class="barra-lateral__enlace" href="objetivo.html"><span class="barra-lateral__numero">03</span>Objetivos</a></li><li><a class="barra-lateral__enlace barra-lateral__enlace--activo" href="segmentacion.html" aria-current="page"><span class="barra-lateral__numero">04</span>Segmentación</a></li><li><a class="barra-lateral__enlace" href="personas.html"><span class="barra-lateral__numero">05</span>Buyer personas</a></li><li><a class="barra-lateral__enlace" href="empatia.html"><span class="barra-lateral__numero">06</span>Empatía</a></li><li><a class="barra-lateral__enlace" href="fuentes.html"><span class="barra-lateral__numero">07</span>Fuentes ENTENDER</a></li></ul></details>
+      <details class="fase-nav"><summary><span class="fase-nav__numero">02</span><span><strong>FASE 2 · DEFINIR</strong><small>Estrategia de marca</small></span><span class="fase-nav__chevron">⌄</span></summary><ul class="barra-lateral__menu"><li><a class="barra-lateral__enlace" href="benchmarking.html"><span class="barra-lateral__numero">06</span>Benchmarking</a></li><li><a class="barra-lateral__enlace" href="propuesta-valor.html"><span class="barra-lateral__numero">07</span>Propuesta de valor</a></li><li><a class="barra-lateral__enlace" href="posicionamiento.html"><span class="barra-lateral__numero">08</span>Posicionamiento</a></li><li><a class="barra-lateral__enlace" href="identidad-marca.html"><span class="barra-lateral__numero">09</span>Identidad de marca</a></li><li><a class="barra-lateral__enlace" href="aplicaciones.html"><span class="barra-lateral__numero">10</span>Aplicaciones y fuentes</a></li></ul></details>
+    </nav>
+    <div class="barra-lateral__pie"><p>De la investigación a una estrategia de marca coherente.</p><a class="boton boton--fuego boton--chico" href="problema.html">Volver al problema →</a></div>
+  </aside>
+
+    <div class="contenido">
+      <main class="pagina" id="contenido-principal">
+
+        <header class="revelar">
+          <p class="sobretitulo">04 · Segmentación general</p>
+          <h1>¿Qué públicos <span class="destacado-dorado">pueden estar involucrados?</span></h1>
+        </header>
+        <p class="introduccion revelar">La segmentación siguiente es provisional. Debe ajustarse a la ubicación real del puesto y validarse mediante observación y consulta a consumidores.</p>
+
+        <article class="tarjeta tarjeta--estatica revelar">
+          <div class="tabla" role="table" aria-label="Segmentación por variable">
+            <div class="tabla__fila tabla__fila--cabecera" role="row">
+              <div class="tabla__celda tabla__celda--corta" role="columnheader">Variable</div>
+              <div class="tabla__celda" role="columnheader">Dimensiones por investigar</div>
+              <div class="tabla__celda" role="columnheader">Relevancia para el problema</div>
+            </div>
+            <div class="tabla__fila" role="row">
+              <div class="tabla__celda tabla__celda--corta" role="rowheader">Geográfica</div>
+              <div class="tabla__celda" role="cell">Personas que transitan, trabajan, estudian o residen cerca del puesto; radio real de influencia por confirmar.</div>
+              <div class="tabla__celda" role="cell">Permite entender quién puede descubrir el negocio presencialmente.</div>
+            </div>
+            <div class="tabla__fila" role="row">
+              <div class="tabla__celda tabla__celda--corta" role="rowheader">Demográfica</div>
+              <div class="tabla__celda" role="cell">Edad adulta, ocupación, presupuesto disponible y composición del hogar; sin asumir distribución hasta recopilar datos.</div>
+              <div class="tabla__celda" role="cell">Puede relacionarse con horarios, presupuesto y tipo de consumo.</div>
+            </div>
+            <div class="tabla__fila" role="row">
+              <div class="tabla__celda tabla__celda--corta" role="rowheader">Psicográfica</div>
+              <div class="tabla__celda" role="cell">Preferencia por conveniencia, sabor, precio, rapidez, familiaridad o variedad.</div>
+              <div class="tabla__celda" role="cell">Ayuda a explorar motivaciones de elección, sin atribuirlas aún a clientes reales.</div>
+            </div>
+            <div class="tabla__fila" role="row">
+              <div class="tabla__celda tabla__celda--corta" role="rowheader">Conductual</div>
+              <div class="tabla__celda" role="cell">Compra ocasional o frecuente, consumo para llevar, compra por impulso, uso de efectivo o transferencias.</div>
+              <div class="tabla__celda" role="cell">Conecta la presentación de la oferta con el proceso real de compra.</div>
+            </div>
+          </div>
+        </article>
+
+        <section class="fila" aria-label="Públicos">
+          <article class="tarjeta tarjeta--dorada columna-6 revelar">
+            <span class="etiqueta etiqueta--dorada">Prioridad 1</span>
+            <h3>Público primario</h3>
+            <p>Personas que transitan o permanecen cerca del puesto y podrían comprar comidas rápidas.</p>
+          </article>
+          <article class="tarjeta columna-6 revelar">
+            <span class="etiqueta etiqueta--dorada">Prioridad 2</span>
+            <h3>Público secundario</h3>
+            <p>Personas que viven, trabajan o estudian en el entorno y podrían convertirse en compradores recurrentes si conocen la oferta.</p>
+          </article>
+        </section>
+        <div class="acciones"><a class="boton" href="personas.html">Ponerles cara a estos públicos →</a></div>
+        <!-- ===== NAVEGACIÓN ENTRE PÁGINAS ===== -->
+        <nav class="pagina-nav" aria-label="Anterior y siguiente">
+          <a class="boton boton--secundario" href="objetivo.html" rel="prev">← Objetivo</a>
+          <a class="boton" href="personas.html" rel="next">Buyer personas →</a>
+        </nav>
+      </main>
+      <footer class="pie-pagina">LA SABROZA · Fase Entender · Prototipo académico de investigación. No contiene propuestas de campaña ni afirma resultados comerciales no verificados.</footer>
+    </div>
+  </div>
+
+  <script src="js/interaccion.js" defer></script>
+</body>
+</html>
